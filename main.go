@@ -4,10 +4,13 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"strings"
 
+	"github.com/chromedp/cdproto/cdp"
 	"github.com/chromedp/chromedp"
 
 	"scraping_challenge/app"
+	"scraping_challenge/scrapers/cometco/factory"
 )
 
 func main() {
@@ -83,17 +86,20 @@ func getData(ctx context.Context, config app.Config) {
 		return
 	}
 
-	meViewSel := `//div[contains(@class, "MeView_main")]`
-	freelancerDetailsSel := meViewSel + `//div[contains(@class, "FreelancerDetails_freelancerDetails")]`
-	fullNameSel := freelancerDetailsSel + `//div[contains(@class, "FreelancerDetails_fullName")]`
-	subtitleSel := freelancerDetailsSel + `//div[contains(@class, "FreelancerDetails_subtitle")]`
+	freelancerProfile, err := factory.NewFreelancerProfile(ctx)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
 
-	var fullName, subtitle string
-	err = chromedp.Run(ctx, chromedp.Tasks{
-		chromedp.Text(fullNameSel, &fullName, chromedp.NodeVisible),
-		chromedp.Text(subtitleSel, &subtitle, chromedp.NodeVisible),
-	})
+	fmt.Println("profile:", freelancerProfile)
+}
 
-	fmt.Println("Full name:", fullName)
-	fmt.Println("Subtitle:", subtitle)
+func getDataFromFreelancerWrapperNodes(nodes []*cdp.Node) {
+	for _, n := range nodes {
+		switch nodeClass := n.AttributeValue("class"); {
+		case strings.Contains(nodeClass, "MeView_main"):
+		case strings.Contains(nodeClass, "MeView_side"):
+		}
+	}
 }
