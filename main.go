@@ -2,15 +2,13 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
-	"strings"
+	"sync"
 
-	"github.com/chromedp/cdproto/cdp"
+	"github.com/chromedp/cdproto/network"
 	"github.com/chromedp/chromedp"
 
 	"scraping_challenge/app"
-	"scraping_challenge/scrapers/cometco/factory"
 )
 
 func main() {
@@ -78,6 +76,25 @@ func getData(ctx context.Context, config app.Config) {
 		log.Fatal(err)
 	}
 
+	done := make(chan struct{})
+	requestWillBeSentCh := make(chan *network.EventRequestWillBeSent)
+	loadingFinishedCh := make(chan *network.EventLoadingFinished)
+	chromedp.ListenTarget(ctx, func(v interface{}) {
+		switch ev := v.(type) {
+		case *network.EventRequestWillBeSent:
+			if ev.Request.URL == "https://app.comet.co/api/graphql" {
+				go func() {
+					requestWillBeSentCh <- ev
+				}()
+			}
+		case *network.EventLoadingFinished:
+			go func() {
+
+				loadingFinishedCh <- ev
+			}()
+		}
+	})
+
 	// Let's go to profile page
 	err = chromedp.Run(ctx,
 		chromedp.Navigate("https://app.comet.co/freelancer/profile"))
@@ -86,20 +103,72 @@ func getData(ctx context.Context, config app.Config) {
 		return
 	}
 
-	freelancerProfile, err := factory.NewFreelancerProfile(ctx)
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
+	loadedReqIDch := finishedRequestsListener(ctx, requestWillBeSentCh, loadingFinishedCh)
 
-	fmt.Println("profile:", freelancerProfile)
+	go func() {
+		for {
+			select {
+			case reqID, ok := <-loadedReqIDch:
+				if !ok {
+					break
+				}
+
+				var respBody []byte
+				err = chromedp.Run(ctx, chromedp.ActionFunc(func(cxt context.Context) error {
+					respBody, err = network.GetResponseBody(reqID).Do(cxt)
+					return err
+				}))
+				if err == nil {
+					respBodyStr := string(respBody)
+					if respBodyStr != "" {
+					}
+				}
+
+			}
+
+		}
+	}()
+
+	<-done
+	//
+	// freelancerProfile, err := factory.NewFreelancerProfile(ctx)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// 	return
+	// }
+
+	// fmt.Println("profile:", freelancerProfile)
 }
 
-func getDataFromFreelancerWrapperNodes(nodes []*cdp.Node) {
-	for _, n := range nodes {
-		switch nodeClass := n.AttributeValue("class"); {
-		case strings.Contains(nodeClass, "MeView_main"):
-		case strings.Contains(nodeClass, "MeView_side"):
+type requestListener struct {
+	requestWillBeSentCh <-chan network.RequestID
+	loadingFinishedCh   <-chan network.RequestID
+	reqMap              map[network.RequestID][]byte
+}
+
+func finishedRequestsListener(ctx context.Context, requestWillBeSentCh <-chan *network.EventRequestWillBeSent, loadingFinishedCh <-chan *network.EventLoadingFinished) <-chan network.RequestID {
+	ch := make(chan network.RequestID)
+	var mu sync.Mutex
+	requests := make(map[network.RequestID]struct{})
+	go func() {
+		for {
+			select {
+			case <-ctx.Done():
+				close(ch)
+				return
+			case t := <-requestWillBeSentCh:
+				mu.Lock()
+				requests[t.RequestID] = struct{}{}
+				mu.Unlock()
+
+			case t := <-loadingFinishedCh:
+				mu.Lock()
+				if _, ok := requests[t.RequestID]; ok {
+					ch <- t.RequestID
+				}
+				mu.Unlock()
+			}
 		}
-	}
+	}()
+	return ch
 }
