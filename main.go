@@ -4,13 +4,11 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"strings"
 
-	"github.com/chromedp/cdproto/cdp"
 	"github.com/chromedp/chromedp"
 
 	"scraping_challenge/app"
-	"scraping_challenge/scrapers/cometco/factory"
+	"scraping_challenge/scrapers/cometco/parser"
 )
 
 func main() {
@@ -86,20 +84,11 @@ func getData(ctx context.Context, config app.Config) {
 		return
 	}
 
-	freelancerProfile, err := factory.NewFreelancerProfile(ctx)
+	freelancerProfile, err := parser.ParseFreelancerProfile(ctx)
 	if err != nil {
 		log.Fatal(err)
 		return
 	}
 
 	fmt.Println("profile:", freelancerProfile)
-}
-
-func getDataFromFreelancerWrapperNodes(nodes []*cdp.Node) {
-	for _, n := range nodes {
-		switch nodeClass := n.AttributeValue("class"); {
-		case strings.Contains(nodeClass, "MeView_main"):
-		case strings.Contains(nodeClass, "MeView_side"):
-		}
-	}
 }

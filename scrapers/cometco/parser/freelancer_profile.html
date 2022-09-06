@@ -1,0 +1,2628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><html class="axeptio-widget--open"><head><script async=""
+        src="//static.axept.io/sdk-slim.js"></script><script>var dataLayer =
+        [{}];</script><script>window.addEventListener("load", function(event) {
+        const waitingScreen = document.getElementById("waitingScreen")
+
+        waitingScreen.addEventListener('transitionend', transitionEndCallback);
+        waitingScreen.style.opacity=0;
+        });
+
+        function transitionEndCallback(e) {
+        const waitingScreen = document.getElementById("waitingScreen")
+        waitingScreen.removeEventListener('transitionend', transitionEndCallback);
+        waitingScreen.style.display="none";
+        }
+
+        function fadeIn() {
+        document.getElementById("logo").style.opacity=1;
+        }</script><style>#waitingScreen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        transition: opacity 1s;
+        opacity: 1;
+        background-color: #FFFFFF;
+        z-index: 100;
+        }
+
+        #logo {
+        width: 180px;
+        transition: opacity 0.5s;
+        height: 180px;
+        opacity: 0;
+        }</style><script>void 0 === window._axcb && (window._axcb = [])
+
+        window.axeptioSettings = {
+          clientId: "60e5c00ab73238211e8df970",
+        };
+         
+        (function(d, s) {
+          var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+          e.async = true; e.src = "//static.axept.io/sdk-slim.js";
+          t.parentNode.insertBefore(e, t);
+        })(document, "script");</script><script>window.launchGTM =
+        function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var
+        f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}</script><script
+        async="" defer="defer">window._axcb.push(function(axeptio) {
+        axeptio.on("cookies:complete", function(choices) {
+        if(choices.google_analytics) {
+        window.launchGTM(window,document,'script','dataLayer','GTM-5DB5JH5')
+        }
+        })
+        });</script><meta charset="utf-8"><title>comet - Mon profil - Freelance</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/icons/favicon-32x32.png">
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="stylesheet" href="/css/vue-vendors.e913d070.css">
+    <link rel="stylesheet" href="/css/app.818fd20d.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.0.45/css/materialdesignicons.min.css">
+    <meta name="environment" content="production">
+    <meta name="apple-mobile-web-app-title" content="comet">
+    <meta name="application-name" content="comet">
+    <meta name="google-site-verification" content="jnEZHYfwpi63dCXvFJuVp5CpBuRLwnSHS4boIZ-3a5s">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style type="text/css">.resize-observer[data-v-8859cc6c] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: transparent;
+        pointer-events: none;
+        display: block;
+        overflow: hidden;
+        opacity: 0
+    }
+
+    .resize-observer[data-v-8859cc6c] object {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: -1
+    }</style>
+    <style type="text/css">.vue-simple-spinner {
+        transition: all .3s linear
+    }
+
+    @keyframes vue-simple-spinner-spin {
+        0% {
+            transform: rotate(0deg)
+        }
+        to {
+            transform: rotate(1turn)
+        }
+    }</style>
+    <style type="text/css"></style>
+    <style type="text/css"></style>
+    <style type="text/css"></style>
+    <style type="text/css"></style>
+    <style type="text/css">.rtl {
+        direction: rtl;
+    }
+
+    .vdp-datepicker {
+        position: relative;
+        text-align: left;
+    }
+
+    .vdp-datepicker * {
+        box-sizing: border-box;
+    }
+
+    .vdp-datepicker__calendar {
+        position: absolute;
+        z-index: 100;
+        background: #fff;
+        width: 300px;
+        border: 1px solid #ccc;
+    }
+
+    .vdp-datepicker__calendar header {
+        display: block;
+        line-height: 40px;
+    }
+
+    .vdp-datepicker__calendar header span {
+        display: inline-block;
+        text-align: center;
+        width: 71.42857142857143%;
+        float: left;
+    }
+
+    .vdp-datepicker__calendar header .prev, .vdp-datepicker__calendar header .next {
+        width: 14.285714285714286%;
+        float: left;
+        text-indent: -10000px;
+        position: relative;
+    }
+
+    .vdp-datepicker__calendar header .prev:after, .vdp-datepicker__calendar header .next:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        border: 6px solid transparent;
+    }
+
+    .vdp-datepicker__calendar header .prev:after {
+        border-right: 10px solid #000;
+        margin-left: -5px;
+    }
+
+    .vdp-datepicker__calendar header .prev.disabled:after {
+        border-right: 10px solid #ddd;
+    }
+
+    .vdp-datepicker__calendar header .next:after {
+        border-left: 10px solid #000;
+        margin-left: 5px;
+    }
+
+    .vdp-datepicker__calendar header .next.disabled:after {
+        border-left: 10px solid #ddd;
+    }
+
+    .vdp-datepicker__calendar header .prev:not(.disabled), .vdp-datepicker__calendar header .next:not(.disabled), .vdp-datepicker__calendar header .up:not(.disabled) {
+        cursor: pointer;
+    }
+
+    .vdp-datepicker__calendar header .prev:not(.disabled):hover, .vdp-datepicker__calendar header .next:not(.disabled):hover, .vdp-datepicker__calendar header .up:not(.disabled):hover {
+        background: #eee;
+    }
+
+    .vdp-datepicker__calendar .disabled {
+        color: #ddd;
+        cursor: default;
+    }
+
+    .vdp-datepicker__calendar .flex-rtl {
+        display: flex;
+        width: inherit;
+        flex-wrap: wrap;
+    }
+
+    .vdp-datepicker__calendar .cell {
+        display: inline-block;
+        padding: 0 5px;
+        width: 14.285714285714286%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+    }
+
+    .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year {
+        cursor: pointer;
+    }
+
+    .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {
+        border: 1px solid #4bd;
+    }
+
+    .vdp-datepicker__calendar .cell.selected {
+        background: #4bd;
+    }
+
+    .vdp-datepicker__calendar .cell.selected:hover {
+        background: #4bd;
+    }
+
+    .vdp-datepicker__calendar .cell.selected.highlighted {
+        background: #4bd;
+    }
+
+    .vdp-datepicker__calendar .cell.highlighted {
+        background: #cae5ed;
+    }
+
+    .vdp-datepicker__calendar .cell.highlighted.disabled {
+        color: #a3a3a3;
+    }
+
+    .vdp-datepicker__calendar .cell.grey {
+        color: #888;
+    }
+
+    .vdp-datepicker__calendar .cell.grey:hover {
+        background: inherit;
+    }
+
+    .vdp-datepicker__calendar .cell.day-header {
+        font-size: 75%;
+        white-space: nowrap;
+        cursor: inherit;
+    }
+
+    .vdp-datepicker__calendar .cell.day-header:hover {
+        background: inherit;
+    }
+
+    .vdp-datepicker__calendar .month, .vdp-datepicker__calendar .year {
+        width: 33.333%;
+    }
+
+    .vdp-datepicker__clear-button, .vdp-datepicker__calendar-button {
+        cursor: pointer;
+        font-style: normal;
+    }
+
+    .vdp-datepicker__clear-button.disabled, .vdp-datepicker__calendar-button.disabled {
+        color: #999;
+        cursor: default;
+    } </style>
+    <style type="text/css">.vue-slider-dot {
+        position: absolute;
+        will-change: transform;
+        -webkit-transition: all 0s;
+        transition: all 0s;
+        z-index: 5
+    }
+
+    .vue-slider-dot-tooltip {
+        position: absolute;
+        visibility: hidden
+    }
+
+    .vue-slider-dot-tooltip-show {
+        visibility: visible
+    }
+
+    .vue-slider-dot-tooltip-top {
+        top: -10px;
+        left: 50%;
+        -webkit-transform: translate(-50%, -100%);
+        transform: translate(-50%, -100%)
+    }
+
+    .vue-slider-dot-tooltip-bottom {
+        bottom: -10px;
+        left: 50%;
+        -webkit-transform: translate(-50%, 100%);
+        transform: translate(-50%, 100%)
+    }
+
+    .vue-slider-dot-tooltip-left {
+        left: -10px;
+        top: 50%;
+        -webkit-transform: translate(-100%, -50%);
+        transform: translate(-100%, -50%)
+    }
+
+    .vue-slider-dot-tooltip-right {
+        right: -10px;
+        top: 50%;
+        -webkit-transform: translate(100%, -50%);
+        transform: translate(100%, -50%)
+    }</style>
+    <style type="text/css">.vue-slider-marks {
+        position: relative;
+        width: 100%;
+        height: 100%
+    }
+
+    .vue-slider-mark {
+        position: absolute;
+        z-index: 1
+    }
+
+    .vue-slider-ltr .vue-slider-mark, .vue-slider-rtl .vue-slider-mark {
+        width: 0;
+        height: 100%;
+        top: 50%
+    }
+
+    .vue-slider-ltr .vue-slider-mark-step, .vue-slider-rtl .vue-slider-mark-step {
+        top: 0
+    }
+
+    .vue-slider-ltr .vue-slider-mark-label, .vue-slider-rtl .vue-slider-mark-label {
+        top: 100%;
+        margin-top: 10px
+    }
+
+    .vue-slider-ltr .vue-slider-mark {
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%)
+    }
+
+    .vue-slider-ltr .vue-slider-mark-step {
+        left: 0
+    }
+
+    .vue-slider-ltr .vue-slider-mark-label {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%)
+    }
+
+    .vue-slider-rtl .vue-slider-mark {
+        -webkit-transform: translate(50%, -50%);
+        transform: translate(50%, -50%)
+    }
+
+    .vue-slider-rtl .vue-slider-mark-step {
+        right: 0
+    }
+
+    .vue-slider-rtl .vue-slider-mark-label {
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        transform: translateX(50%)
+    }
+
+    .vue-slider-btt .vue-slider-mark, .vue-slider-ttb .vue-slider-mark {
+        width: 100%;
+        height: 0;
+        left: 50%
+    }
+
+    .vue-slider-btt .vue-slider-mark-step, .vue-slider-ttb .vue-slider-mark-step {
+        left: 0
+    }
+
+    .vue-slider-btt .vue-slider-mark-label, .vue-slider-ttb .vue-slider-mark-label {
+        left: 100%;
+        margin-left: 10px
+    }
+
+    .vue-slider-btt .vue-slider-mark {
+        -webkit-transform: translate(-50%, 50%);
+        transform: translate(-50%, 50%)
+    }
+
+    .vue-slider-btt .vue-slider-mark-step {
+        top: 0
+    }
+
+    .vue-slider-btt .vue-slider-mark-label {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+
+    .vue-slider-ttb .vue-slider-mark {
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%)
+    }
+
+    .vue-slider-ttb .vue-slider-mark-step {
+        bottom: 0
+    }
+
+    .vue-slider-ttb .vue-slider-mark-label {
+        bottom: 50%;
+        -webkit-transform: translateY(50%);
+        transform: translateY(50%)
+    }
+
+    .vue-slider-mark-label, .vue-slider-mark-step {
+        position: absolute
+    }</style>
+    <style type="text/css">.vue-slider {
+        position: relative;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        display: block;
+        -ms-touch-action: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+
+    .vue-slider-disabled {
+        pointer-events: none
+    }
+
+    .vue-slider-rail {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        -webkit-transition-property: width, height, left, right, top, bottom;
+        transition-property: width, height, left, right, top, bottom
+    }
+
+    .vue-slider-process {
+        position: absolute;
+        z-index: 1
+    }
+
+    .vue-slider-sr-only {
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        position: absolute !important
+    }</style>
+    <script charset="utf-8" src="/js/vendors~fr-FR.b59a0d85.js"></script>
+    <style type="text/css" id="vuetify-theme-stylesheet">:root {
+        --v-anchor-base: #0044ff;
+        --v-primary-base: #0044ff;
+        --v-primary-lighten5: #dac6ff;
+        --v-primary-lighten4: #b9aaff;
+        --v-primary-lighten3: #988fff;
+        --v-primary-lighten2: #7575ff;
+        --v-primary-lighten1: #4d5cff;
+        --v-primary-darken1: #002de2;
+        --v-primary-darken2: #0017c5;
+        --v-primary-darken3: #0005a8;
+        --v-primary-darken4: #00008d;
+        --v-secondary-base: #73808d;
+        --v-secondary-lighten5: #fbffff;
+        --v-secondary-lighten4: #deedfb;
+        --v-secondary-lighten3: #c2d0df;
+        --v-secondary-lighten2: #a7b5c3;
+        --v-secondary-lighten1: #8d9aa7;
+        --v-secondary-darken1: #5a6773;
+        --v-secondary-darken2: #434f5b;
+        --v-secondary-darken3: #2c3843;
+        --v-secondary-darken4: #16232d;
+        --v-accent-base: #ffcc00;
+        --v-accent-lighten5: #ffffaf;
+        --v-accent-lighten4: #ffff92;
+        --v-accent-lighten3: #ffff75;
+        --v-accent-lighten2: #ffff57;
+        --v-accent-lighten1: #ffe836;
+        --v-accent-darken1: #e0b100;
+        --v-accent-darken2: #c19600;
+        --v-accent-darken3: #a37d00;
+        --v-accent-darken4: #866400;
+        --v-error-base: #ee0044;
+        --v-error-lighten5: #ffb9c3;
+        --v-error-lighten4: #ff9ba8;
+        --v-error-lighten3: #ff7d8d;
+        --v-error-lighten2: #ff5e74;
+        --v-error-lighten1: #ff3c5b;
+        --v-error-darken1: #cd002e;
+        --v-error-darken2: #ad001a;
+        --v-error-darken3: #8d0001;
+        --v-error-darken4: #6f0000;
+        --v-info-base: #2196f3;
+        --v-info-lighten5: #d4ffff;
+        --v-info-lighten4: #b5ffff;
+        --v-info-lighten3: #95e8ff;
+        --v-info-lighten2: #75ccff;
+        --v-info-lighten1: #51b0ff;
+        --v-info-darken1: #007cd6;
+        --v-info-darken2: #0064ba;
+        --v-info-darken3: #004d9f;
+        --v-info-darken4: #003784;
+        --v-success-base: #11cc66;
+        --v-success-lighten5: #c7ffef;
+        --v-success-lighten4: #a8ffd2;
+        --v-success-lighten3: #89ffb6;
+        --v-success-lighten2: #69ff9b;
+        --v-success-lighten1: #46e980;
+        --v-success-darken1: #00b04d;
+        --v-success-darken2: #009434;
+        --v-success-darken3: #00791a;
+        --v-success-darken4: #005f00;
+        --v-warning-base: #ff8800;
+        --v-warning-lighten5: #ffff9e;
+        --v-warning-lighten4: #fff782;
+        --v-warning-lighten3: #ffdb66;
+        --v-warning-lighten2: #ffbe4a;
+        --v-warning-lighten1: #ffa32c;
+        --v-warning-darken1: #df6e00;
+        --v-warning-darken2: #bf5400;
+        --v-warning-darken3: #a03b00;
+        --v-warning-darken4: #832100;
+        --v-brand-base: #0044ff;
+        --v-brand-lighten5: #dac6ff;
+        --v-brand-lighten4: #b9aaff;
+        --v-brand-lighten3: #988fff;
+        --v-brand-lighten2: #7575ff;
+        --v-brand-lighten1: #4d5cff;
+        --v-brand-darken1: #002de2;
+        --v-brand-darken2: #0017c5;
+        --v-brand-darken3: #0005a8;
+        --v-brand-darken4: #00008d;
+        --v-positive-base: #11cc66;
+        --v-positive-lighten5: #c7ffef;
+        --v-positive-lighten4: #a8ffd2;
+        --v-positive-lighten3: #89ffb6;
+        --v-positive-lighten2: #69ff9b;
+        --v-positive-lighten1: #46e980;
+        --v-positive-darken1: #00b04d;
+        --v-positive-darken2: #009434;
+        --v-positive-darken3: #00791a;
+        --v-positive-darken4: #005f00;
+        --v-negative-base: #ee0044;
+        --v-negative-lighten5: #ffb9c3;
+        --v-negative-lighten4: #ff9ba8;
+        --v-negative-lighten3: #ff7d8d;
+        --v-negative-lighten2: #ff5e74;
+        --v-negative-lighten1: #ff3c5b;
+        --v-negative-darken1: #cd002e;
+        --v-negative-darken2: #ad001a;
+        --v-negative-darken3: #8d0001;
+        --v-negative-darken4: #6f0000;
+        --v-background-light-base: #ffffff;
+        --v-background-light-lighten5: #ffffff;
+        --v-background-light-lighten4: #ffffff;
+        --v-background-light-lighten3: #ffffff;
+        --v-background-light-lighten2: #ffffff;
+        --v-background-light-lighten1: #ffffff;
+        --v-background-light-darken1: #e2e2e2;
+        --v-background-light-darken2: #c6c6c6;
+        --v-background-light-darken3: #ababab;
+        --v-background-light-darken4: #919191;
+        --v-background-base: #f9fafd;
+        --v-background-lighten5: #ffffff;
+        --v-background-lighten4: #ffffff;
+        --v-background-lighten3: #ffffff;
+        --v-background-lighten2: #ffffff;
+        --v-background-lighten1: #ffffff;
+        --v-background-darken1: #dcdde0;
+        --v-background-darken2: #c1c2c4;
+        --v-background-darken3: #a5a6a9;
+        --v-background-darken4: #8b8c8f;
+        --v-background-dual-base: #f4f6fc;
+        --v-background-dual-lighten5: #ffffff;
+        --v-background-dual-lighten4: #ffffff;
+        --v-background-dual-lighten3: #ffffff;
+        --v-background-dual-lighten2: #ffffff;
+        --v-background-dual-lighten1: #ffffff;
+        --v-background-dual-darken1: #d8dadf;
+        --v-background-dual-darken2: #bcbec3;
+        --v-background-dual-darken3: #a1a3a8;
+        --v-background-dual-darken4: #87888e;
+        --v-border-base: #e3e9f2;
+        --v-border-lighten5: #ffffff;
+        --v-border-lighten4: #ffffff;
+        --v-border-lighten3: #ffffff;
+        --v-border-lighten2: #ffffff;
+        --v-border-lighten1: #ffffff;
+        --v-border-darken1: #c7cdd6;
+        --v-border-darken2: #acb1ba;
+        --v-border-darken3: #91979f;
+        --v-border-darken4: #777d85;
+    }
+
+    .v-application a {
+        color: var(--v-anchor-base);
+    }
+
+    .v-application .primary {
+        background-color: var(--v-primary-base) !important;
+        border-color: var(--v-primary-base) !important;
+    }
+
+    .v-application .primary--text {
+        color: var(--v-primary-base) !important;
+        caret-color: var(--v-primary-base) !important;
+    }
+
+    .v-application .primary.lighten-5 {
+        background-color: var(--v-primary-lighten5) !important;
+        border-color: var(--v-primary-lighten5) !important;
+    }
+
+    .v-application .primary--text.text--lighten-5 {
+        color: var(--v-primary-lighten5) !important;
+        caret-color: var(--v-primary-lighten5) !important;
+    }
+
+    .v-application .primary.lighten-4 {
+        background-color: var(--v-primary-lighten4) !important;
+        border-color: var(--v-primary-lighten4) !important;
+    }
+
+    .v-application .primary--text.text--lighten-4 {
+        color: var(--v-primary-lighten4) !important;
+        caret-color: var(--v-primary-lighten4) !important;
+    }
+
+    .v-application .primary.lighten-3 {
+        background-color: var(--v-primary-lighten3) !important;
+        border-color: var(--v-primary-lighten3) !important;
+    }
+
+    .v-application .primary--text.text--lighten-3 {
+        color: var(--v-primary-lighten3) !important;
+        caret-color: var(--v-primary-lighten3) !important;
+    }
+
+    .v-application .primary.lighten-2 {
+        background-color: var(--v-primary-lighten2) !important;
+        border-color: var(--v-primary-lighten2) !important;
+    }
+
+    .v-application .primary--text.text--lighten-2 {
+        color: var(--v-primary-lighten2) !important;
+        caret-color: var(--v-primary-lighten2) !important;
+    }
+
+    .v-application .primary.lighten-1 {
+        background-color: var(--v-primary-lighten1) !important;
+        border-color: var(--v-primary-lighten1) !important;
+    }
+
+    .v-application .primary--text.text--lighten-1 {
+        color: var(--v-primary-lighten1) !important;
+        caret-color: var(--v-primary-lighten1) !important;
+    }
+
+    .v-application .primary.darken-1 {
+        background-color: var(--v-primary-darken1) !important;
+        border-color: var(--v-primary-darken1) !important;
+    }
+
+    .v-application .primary--text.text--darken-1 {
+        color: var(--v-primary-darken1) !important;
+        caret-color: var(--v-primary-darken1) !important;
+    }
+
+    .v-application .primary.darken-2 {
+        background-color: var(--v-primary-darken2) !important;
+        border-color: var(--v-primary-darken2) !important;
+    }
+
+    .v-application .primary--text.text--darken-2 {
+        color: var(--v-primary-darken2) !important;
+        caret-color: var(--v-primary-darken2) !important;
+    }
+
+    .v-application .primary.darken-3 {
+        background-color: var(--v-primary-darken3) !important;
+        border-color: var(--v-primary-darken3) !important;
+    }
+
+    .v-application .primary--text.text--darken-3 {
+        color: var(--v-primary-darken3) !important;
+        caret-color: var(--v-primary-darken3) !important;
+    }
+
+    .v-application .primary.darken-4 {
+        background-color: var(--v-primary-darken4) !important;
+        border-color: var(--v-primary-darken4) !important;
+    }
+
+    .v-application .primary--text.text--darken-4 {
+        color: var(--v-primary-darken4) !important;
+        caret-color: var(--v-primary-darken4) !important;
+    }
+
+    .v-application .secondary {
+        background-color: var(--v-secondary-base) !important;
+        border-color: var(--v-secondary-base) !important;
+    }
+
+    .v-application .secondary--text {
+        color: var(--v-secondary-base) !important;
+        caret-color: var(--v-secondary-base) !important;
+    }
+
+    .v-application .secondary.lighten-5 {
+        background-color: var(--v-secondary-lighten5) !important;
+        border-color: var(--v-secondary-lighten5) !important;
+    }
+
+    .v-application .secondary--text.text--lighten-5 {
+        color: var(--v-secondary-lighten5) !important;
+        caret-color: var(--v-secondary-lighten5) !important;
+    }
+
+    .v-application .secondary.lighten-4 {
+        background-color: var(--v-secondary-lighten4) !important;
+        border-color: var(--v-secondary-lighten4) !important;
+    }
+
+    .v-application .secondary--text.text--lighten-4 {
+        color: var(--v-secondary-lighten4) !important;
+        caret-color: var(--v-secondary-lighten4) !important;
+    }
+
+    .v-application .secondary.lighten-3 {
+        background-color: var(--v-secondary-lighten3) !important;
+        border-color: var(--v-secondary-lighten3) !important;
+    }
+
+    .v-application .secondary--text.text--lighten-3 {
+        color: var(--v-secondary-lighten3) !important;
+        caret-color: var(--v-secondary-lighten3) !important;
+    }
+
+    .v-application .secondary.lighten-2 {
+        background-color: var(--v-secondary-lighten2) !important;
+        border-color: var(--v-secondary-lighten2) !important;
+    }
+
+    .v-application .secondary--text.text--lighten-2 {
+        color: var(--v-secondary-lighten2) !important;
+        caret-color: var(--v-secondary-lighten2) !important;
+    }
+
+    .v-application .secondary.lighten-1 {
+        background-color: var(--v-secondary-lighten1) !important;
+        border-color: var(--v-secondary-lighten1) !important;
+    }
+
+    .v-application .secondary--text.text--lighten-1 {
+        color: var(--v-secondary-lighten1) !important;
+        caret-color: var(--v-secondary-lighten1) !important;
+    }
+
+    .v-application .secondary.darken-1 {
+        background-color: var(--v-secondary-darken1) !important;
+        border-color: var(--v-secondary-darken1) !important;
+    }
+
+    .v-application .secondary--text.text--darken-1 {
+        color: var(--v-secondary-darken1) !important;
+        caret-color: var(--v-secondary-darken1) !important;
+    }
+
+    .v-application .secondary.darken-2 {
+        background-color: var(--v-secondary-darken2) !important;
+        border-color: var(--v-secondary-darken2) !important;
+    }
+
+    .v-application .secondary--text.text--darken-2 {
+        color: var(--v-secondary-darken2) !important;
+        caret-color: var(--v-secondary-darken2) !important;
+    }
+
+    .v-application .secondary.darken-3 {
+        background-color: var(--v-secondary-darken3) !important;
+        border-color: var(--v-secondary-darken3) !important;
+    }
+
+    .v-application .secondary--text.text--darken-3 {
+        color: var(--v-secondary-darken3) !important;
+        caret-color: var(--v-secondary-darken3) !important;
+    }
+
+    .v-application .secondary.darken-4 {
+        background-color: var(--v-secondary-darken4) !important;
+        border-color: var(--v-secondary-darken4) !important;
+    }
+
+    .v-application .secondary--text.text--darken-4 {
+        color: var(--v-secondary-darken4) !important;
+        caret-color: var(--v-secondary-darken4) !important;
+    }
+
+    .v-application .accent {
+        background-color: var(--v-accent-base) !important;
+        border-color: var(--v-accent-base) !important;
+    }
+
+    .v-application .accent--text {
+        color: var(--v-accent-base) !important;
+        caret-color: var(--v-accent-base) !important;
+    }
+
+    .v-application .accent.lighten-5 {
+        background-color: var(--v-accent-lighten5) !important;
+        border-color: var(--v-accent-lighten5) !important;
+    }
+
+    .v-application .accent--text.text--lighten-5 {
+        color: var(--v-accent-lighten5) !important;
+        caret-color: var(--v-accent-lighten5) !important;
+    }
+
+    .v-application .accent.lighten-4 {
+        background-color: var(--v-accent-lighten4) !important;
+        border-color: var(--v-accent-lighten4) !important;
+    }
+
+    .v-application .accent--text.text--lighten-4 {
+        color: var(--v-accent-lighten4) !important;
+        caret-color: var(--v-accent-lighten4) !important;
+    }
+
+    .v-application .accent.lighten-3 {
+        background-color: var(--v-accent-lighten3) !important;
+        border-color: var(--v-accent-lighten3) !important;
+    }
+
+    .v-application .accent--text.text--lighten-3 {
+        color: var(--v-accent-lighten3) !important;
+        caret-color: var(--v-accent-lighten3) !important;
+    }
+
+    .v-application .accent.lighten-2 {
+        background-color: var(--v-accent-lighten2) !important;
+        border-color: var(--v-accent-lighten2) !important;
+    }
+
+    .v-application .accent--text.text--lighten-2 {
+        color: var(--v-accent-lighten2) !important;
+        caret-color: var(--v-accent-lighten2) !important;
+    }
+
+    .v-application .accent.lighten-1 {
+        background-color: var(--v-accent-lighten1) !important;
+        border-color: var(--v-accent-lighten1) !important;
+    }
+
+    .v-application .accent--text.text--lighten-1 {
+        color: var(--v-accent-lighten1) !important;
+        caret-color: var(--v-accent-lighten1) !important;
+    }
+
+    .v-application .accent.darken-1 {
+        background-color: var(--v-accent-darken1) !important;
+        border-color: var(--v-accent-darken1) !important;
+    }
+
+    .v-application .accent--text.text--darken-1 {
+        color: var(--v-accent-darken1) !important;
+        caret-color: var(--v-accent-darken1) !important;
+    }
+
+    .v-application .accent.darken-2 {
+        background-color: var(--v-accent-darken2) !important;
+        border-color: var(--v-accent-darken2) !important;
+    }
+
+    .v-application .accent--text.text--darken-2 {
+        color: var(--v-accent-darken2) !important;
+        caret-color: var(--v-accent-darken2) !important;
+    }
+
+    .v-application .accent.darken-3 {
+        background-color: var(--v-accent-darken3) !important;
+        border-color: var(--v-accent-darken3) !important;
+    }
+
+    .v-application .accent--text.text--darken-3 {
+        color: var(--v-accent-darken3) !important;
+        caret-color: var(--v-accent-darken3) !important;
+    }
+
+    .v-application .accent.darken-4 {
+        background-color: var(--v-accent-darken4) !important;
+        border-color: var(--v-accent-darken4) !important;
+    }
+
+    .v-application .accent--text.text--darken-4 {
+        color: var(--v-accent-darken4) !important;
+        caret-color: var(--v-accent-darken4) !important;
+    }
+
+    .v-application .error {
+        background-color: var(--v-error-base) !important;
+        border-color: var(--v-error-base) !important;
+    }
+
+    .v-application .error--text {
+        color: var(--v-error-base) !important;
+        caret-color: var(--v-error-base) !important;
+    }
+
+    .v-application .error.lighten-5 {
+        background-color: var(--v-error-lighten5) !important;
+        border-color: var(--v-error-lighten5) !important;
+    }
+
+    .v-application .error--text.text--lighten-5 {
+        color: var(--v-error-lighten5) !important;
+        caret-color: var(--v-error-lighten5) !important;
+    }
+
+    .v-application .error.lighten-4 {
+        background-color: var(--v-error-lighten4) !important;
+        border-color: var(--v-error-lighten4) !important;
+    }
+
+    .v-application .error--text.text--lighten-4 {
+        color: var(--v-error-lighten4) !important;
+        caret-color: var(--v-error-lighten4) !important;
+    }
+
+    .v-application .error.lighten-3 {
+        background-color: var(--v-error-lighten3) !important;
+        border-color: var(--v-error-lighten3) !important;
+    }
+
+    .v-application .error--text.text--lighten-3 {
+        color: var(--v-error-lighten3) !important;
+        caret-color: var(--v-error-lighten3) !important;
+    }
+
+    .v-application .error.lighten-2 {
+        background-color: var(--v-error-lighten2) !important;
+        border-color: var(--v-error-lighten2) !important;
+    }
+
+    .v-application .error--text.text--lighten-2 {
+        color: var(--v-error-lighten2) !important;
+        caret-color: var(--v-error-lighten2) !important;
+    }
+
+    .v-application .error.lighten-1 {
+        background-color: var(--v-error-lighten1) !important;
+        border-color: var(--v-error-lighten1) !important;
+    }
+
+    .v-application .error--text.text--lighten-1 {
+        color: var(--v-error-lighten1) !important;
+        caret-color: var(--v-error-lighten1) !important;
+    }
+
+    .v-application .error.darken-1 {
+        background-color: var(--v-error-darken1) !important;
+        border-color: var(--v-error-darken1) !important;
+    }
+
+    .v-application .error--text.text--darken-1 {
+        color: var(--v-error-darken1) !important;
+        caret-color: var(--v-error-darken1) !important;
+    }
+
+    .v-application .error.darken-2 {
+        background-color: var(--v-error-darken2) !important;
+        border-color: var(--v-error-darken2) !important;
+    }
+
+    .v-application .error--text.text--darken-2 {
+        color: var(--v-error-darken2) !important;
+        caret-color: var(--v-error-darken2) !important;
+    }
+
+    .v-application .error.darken-3 {
+        background-color: var(--v-error-darken3) !important;
+        border-color: var(--v-error-darken3) !important;
+    }
+
+    .v-application .error--text.text--darken-3 {
+        color: var(--v-error-darken3) !important;
+        caret-color: var(--v-error-darken3) !important;
+    }
+
+    .v-application .error.darken-4 {
+        background-color: var(--v-error-darken4) !important;
+        border-color: var(--v-error-darken4) !important;
+    }
+
+    .v-application .error--text.text--darken-4 {
+        color: var(--v-error-darken4) !important;
+        caret-color: var(--v-error-darken4) !important;
+    }
+
+    .v-application .info {
+        background-color: var(--v-info-base) !important;
+        border-color: var(--v-info-base) !important;
+    }
+
+    .v-application .info--text {
+        color: var(--v-info-base) !important;
+        caret-color: var(--v-info-base) !important;
+    }
+
+    .v-application .info.lighten-5 {
+        background-color: var(--v-info-lighten5) !important;
+        border-color: var(--v-info-lighten5) !important;
+    }
+
+    .v-application .info--text.text--lighten-5 {
+        color: var(--v-info-lighten5) !important;
+        caret-color: var(--v-info-lighten5) !important;
+    }
+
+    .v-application .info.lighten-4 {
+        background-color: var(--v-info-lighten4) !important;
+        border-color: var(--v-info-lighten4) !important;
+    }
+
+    .v-application .info--text.text--lighten-4 {
+        color: var(--v-info-lighten4) !important;
+        caret-color: var(--v-info-lighten4) !important;
+    }
+
+    .v-application .info.lighten-3 {
+        background-color: var(--v-info-lighten3) !important;
+        border-color: var(--v-info-lighten3) !important;
+    }
+
+    .v-application .info--text.text--lighten-3 {
+        color: var(--v-info-lighten3) !important;
+        caret-color: var(--v-info-lighten3) !important;
+    }
+
+    .v-application .info.lighten-2 {
+        background-color: var(--v-info-lighten2) !important;
+        border-color: var(--v-info-lighten2) !important;
+    }
+
+    .v-application .info--text.text--lighten-2 {
+        color: var(--v-info-lighten2) !important;
+        caret-color: var(--v-info-lighten2) !important;
+    }
+
+    .v-application .info.lighten-1 {
+        background-color: var(--v-info-lighten1) !important;
+        border-color: var(--v-info-lighten1) !important;
+    }
+
+    .v-application .info--text.text--lighten-1 {
+        color: var(--v-info-lighten1) !important;
+        caret-color: var(--v-info-lighten1) !important;
+    }
+
+    .v-application .info.darken-1 {
+        background-color: var(--v-info-darken1) !important;
+        border-color: var(--v-info-darken1) !important;
+    }
+
+    .v-application .info--text.text--darken-1 {
+        color: var(--v-info-darken1) !important;
+        caret-color: var(--v-info-darken1) !important;
+    }
+
+    .v-application .info.darken-2 {
+        background-color: var(--v-info-darken2) !important;
+        border-color: var(--v-info-darken2) !important;
+    }
+
+    .v-application .info--text.text--darken-2 {
+        color: var(--v-info-darken2) !important;
+        caret-color: var(--v-info-darken2) !important;
+    }
+
+    .v-application .info.darken-3 {
+        background-color: var(--v-info-darken3) !important;
+        border-color: var(--v-info-darken3) !important;
+    }
+
+    .v-application .info--text.text--darken-3 {
+        color: var(--v-info-darken3) !important;
+        caret-color: var(--v-info-darken3) !important;
+    }
+
+    .v-application .info.darken-4 {
+        background-color: var(--v-info-darken4) !important;
+        border-color: var(--v-info-darken4) !important;
+    }
+
+    .v-application .info--text.text--darken-4 {
+        color: var(--v-info-darken4) !important;
+        caret-color: var(--v-info-darken4) !important;
+    }
+
+    .v-application .success {
+        background-color: var(--v-success-base) !important;
+        border-color: var(--v-success-base) !important;
+    }
+
+    .v-application .success--text {
+        color: var(--v-success-base) !important;
+        caret-color: var(--v-success-base) !important;
+    }
+
+    .v-application .success.lighten-5 {
+        background-color: var(--v-success-lighten5) !important;
+        border-color: var(--v-success-lighten5) !important;
+    }
+
+    .v-application .success--text.text--lighten-5 {
+        color: var(--v-success-lighten5) !important;
+        caret-color: var(--v-success-lighten5) !important;
+    }
+
+    .v-application .success.lighten-4 {
+        background-color: var(--v-success-lighten4) !important;
+        border-color: var(--v-success-lighten4) !important;
+    }
+
+    .v-application .success--text.text--lighten-4 {
+        color: var(--v-success-lighten4) !important;
+        caret-color: var(--v-success-lighten4) !important;
+    }
+
+    .v-application .success.lighten-3 {
+        background-color: var(--v-success-lighten3) !important;
+        border-color: var(--v-success-lighten3) !important;
+    }
+
+    .v-application .success--text.text--lighten-3 {
+        color: var(--v-success-lighten3) !important;
+        caret-color: var(--v-success-lighten3) !important;
+    }
+
+    .v-application .success.lighten-2 {
+        background-color: var(--v-success-lighten2) !important;
+        border-color: var(--v-success-lighten2) !important;
+    }
+
+    .v-application .success--text.text--lighten-2 {
+        color: var(--v-success-lighten2) !important;
+        caret-color: var(--v-success-lighten2) !important;
+    }
+
+    .v-application .success.lighten-1 {
+        background-color: var(--v-success-lighten1) !important;
+        border-color: var(--v-success-lighten1) !important;
+    }
+
+    .v-application .success--text.text--lighten-1 {
+        color: var(--v-success-lighten1) !important;
+        caret-color: var(--v-success-lighten1) !important;
+    }
+
+    .v-application .success.darken-1 {
+        background-color: var(--v-success-darken1) !important;
+        border-color: var(--v-success-darken1) !important;
+    }
+
+    .v-application .success--text.text--darken-1 {
+        color: var(--v-success-darken1) !important;
+        caret-color: var(--v-success-darken1) !important;
+    }
+
+    .v-application .success.darken-2 {
+        background-color: var(--v-success-darken2) !important;
+        border-color: var(--v-success-darken2) !important;
+    }
+
+    .v-application .success--text.text--darken-2 {
+        color: var(--v-success-darken2) !important;
+        caret-color: var(--v-success-darken2) !important;
+    }
+
+    .v-application .success.darken-3 {
+        background-color: var(--v-success-darken3) !important;
+        border-color: var(--v-success-darken3) !important;
+    }
+
+    .v-application .success--text.text--darken-3 {
+        color: var(--v-success-darken3) !important;
+        caret-color: var(--v-success-darken3) !important;
+    }
+
+    .v-application .success.darken-4 {
+        background-color: var(--v-success-darken4) !important;
+        border-color: var(--v-success-darken4) !important;
+    }
+
+    .v-application .success--text.text--darken-4 {
+        color: var(--v-success-darken4) !important;
+        caret-color: var(--v-success-darken4) !important;
+    }
+
+    .v-application .warning {
+        background-color: var(--v-warning-base) !important;
+        border-color: var(--v-warning-base) !important;
+    }
+
+    .v-application .warning--text {
+        color: var(--v-warning-base) !important;
+        caret-color: var(--v-warning-base) !important;
+    }
+
+    .v-application .warning.lighten-5 {
+        background-color: var(--v-warning-lighten5) !important;
+        border-color: var(--v-warning-lighten5) !important;
+    }
+
+    .v-application .warning--text.text--lighten-5 {
+        color: var(--v-warning-lighten5) !important;
+        caret-color: var(--v-warning-lighten5) !important;
+    }
+
+    .v-application .warning.lighten-4 {
+        background-color: var(--v-warning-lighten4) !important;
+        border-color: var(--v-warning-lighten4) !important;
+    }
+
+    .v-application .warning--text.text--lighten-4 {
+        color: var(--v-warning-lighten4) !important;
+        caret-color: var(--v-warning-lighten4) !important;
+    }
+
+    .v-application .warning.lighten-3 {
+        background-color: var(--v-warning-lighten3) !important;
+        border-color: var(--v-warning-lighten3) !important;
+    }
+
+    .v-application .warning--text.text--lighten-3 {
+        color: var(--v-warning-lighten3) !important;
+        caret-color: var(--v-warning-lighten3) !important;
+    }
+
+    .v-application .warning.lighten-2 {
+        background-color: var(--v-warning-lighten2) !important;
+        border-color: var(--v-warning-lighten2) !important;
+    }
+
+    .v-application .warning--text.text--lighten-2 {
+        color: var(--v-warning-lighten2) !important;
+        caret-color: var(--v-warning-lighten2) !important;
+    }
+
+    .v-application .warning.lighten-1 {
+        background-color: var(--v-warning-lighten1) !important;
+        border-color: var(--v-warning-lighten1) !important;
+    }
+
+    .v-application .warning--text.text--lighten-1 {
+        color: var(--v-warning-lighten1) !important;
+        caret-color: var(--v-warning-lighten1) !important;
+    }
+
+    .v-application .warning.darken-1 {
+        background-color: var(--v-warning-darken1) !important;
+        border-color: var(--v-warning-darken1) !important;
+    }
+
+    .v-application .warning--text.text--darken-1 {
+        color: var(--v-warning-darken1) !important;
+        caret-color: var(--v-warning-darken1) !important;
+    }
+
+    .v-application .warning.darken-2 {
+        background-color: var(--v-warning-darken2) !important;
+        border-color: var(--v-warning-darken2) !important;
+    }
+
+    .v-application .warning--text.text--darken-2 {
+        color: var(--v-warning-darken2) !important;
+        caret-color: var(--v-warning-darken2) !important;
+    }
+
+    .v-application .warning.darken-3 {
+        background-color: var(--v-warning-darken3) !important;
+        border-color: var(--v-warning-darken3) !important;
+    }
+
+    .v-application .warning--text.text--darken-3 {
+        color: var(--v-warning-darken3) !important;
+        caret-color: var(--v-warning-darken3) !important;
+    }
+
+    .v-application .warning.darken-4 {
+        background-color: var(--v-warning-darken4) !important;
+        border-color: var(--v-warning-darken4) !important;
+    }
+
+    .v-application .warning--text.text--darken-4 {
+        color: var(--v-warning-darken4) !important;
+        caret-color: var(--v-warning-darken4) !important;
+    }
+
+    .v-application .brand {
+        background-color: var(--v-brand-base) !important;
+        border-color: var(--v-brand-base) !important;
+    }
+
+    .v-application .brand--text {
+        color: var(--v-brand-base) !important;
+        caret-color: var(--v-brand-base) !important;
+    }
+
+    .v-application .brand.lighten-5 {
+        background-color: var(--v-brand-lighten5) !important;
+        border-color: var(--v-brand-lighten5) !important;
+    }
+
+    .v-application .brand--text.text--lighten-5 {
+        color: var(--v-brand-lighten5) !important;
+        caret-color: var(--v-brand-lighten5) !important;
+    }
+
+    .v-application .brand.lighten-4 {
+        background-color: var(--v-brand-lighten4) !important;
+        border-color: var(--v-brand-lighten4) !important;
+    }
+
+    .v-application .brand--text.text--lighten-4 {
+        color: var(--v-brand-lighten4) !important;
+        caret-color: var(--v-brand-lighten4) !important;
+    }
+
+    .v-application .brand.lighten-3 {
+        background-color: var(--v-brand-lighten3) !important;
+        border-color: var(--v-brand-lighten3) !important;
+    }
+
+    .v-application .brand--text.text--lighten-3 {
+        color: var(--v-brand-lighten3) !important;
+        caret-color: var(--v-brand-lighten3) !important;
+    }
+
+    .v-application .brand.lighten-2 {
+        background-color: var(--v-brand-lighten2) !important;
+        border-color: var(--v-brand-lighten2) !important;
+    }
+
+    .v-application .brand--text.text--lighten-2 {
+        color: var(--v-brand-lighten2) !important;
+        caret-color: var(--v-brand-lighten2) !important;
+    }
+
+    .v-application .brand.lighten-1 {
+        background-color: var(--v-brand-lighten1) !important;
+        border-color: var(--v-brand-lighten1) !important;
+    }
+
+    .v-application .brand--text.text--lighten-1 {
+        color: var(--v-brand-lighten1) !important;
+        caret-color: var(--v-brand-lighten1) !important;
+    }
+
+    .v-application .brand.darken-1 {
+        background-color: var(--v-brand-darken1) !important;
+        border-color: var(--v-brand-darken1) !important;
+    }
+
+    .v-application .brand--text.text--darken-1 {
+        color: var(--v-brand-darken1) !important;
+        caret-color: var(--v-brand-darken1) !important;
+    }
+
+    .v-application .brand.darken-2 {
+        background-color: var(--v-brand-darken2) !important;
+        border-color: var(--v-brand-darken2) !important;
+    }
+
+    .v-application .brand--text.text--darken-2 {
+        color: var(--v-brand-darken2) !important;
+        caret-color: var(--v-brand-darken2) !important;
+    }
+
+    .v-application .brand.darken-3 {
+        background-color: var(--v-brand-darken3) !important;
+        border-color: var(--v-brand-darken3) !important;
+    }
+
+    .v-application .brand--text.text--darken-3 {
+        color: var(--v-brand-darken3) !important;
+        caret-color: var(--v-brand-darken3) !important;
+    }
+
+    .v-application .brand.darken-4 {
+        background-color: var(--v-brand-darken4) !important;
+        border-color: var(--v-brand-darken4) !important;
+    }
+
+    .v-application .brand--text.text--darken-4 {
+        color: var(--v-brand-darken4) !important;
+        caret-color: var(--v-brand-darken4) !important;
+    }
+
+    .v-application .positive {
+        background-color: var(--v-positive-base) !important;
+        border-color: var(--v-positive-base) !important;
+    }
+
+    .v-application .positive--text {
+        color: var(--v-positive-base) !important;
+        caret-color: var(--v-positive-base) !important;
+    }
+
+    .v-application .positive.lighten-5 {
+        background-color: var(--v-positive-lighten5) !important;
+        border-color: var(--v-positive-lighten5) !important;
+    }
+
+    .v-application .positive--text.text--lighten-5 {
+        color: var(--v-positive-lighten5) !important;
+        caret-color: var(--v-positive-lighten5) !important;
+    }
+
+    .v-application .positive.lighten-4 {
+        background-color: var(--v-positive-lighten4) !important;
+        border-color: var(--v-positive-lighten4) !important;
+    }
+
+    .v-application .positive--text.text--lighten-4 {
+        color: var(--v-positive-lighten4) !important;
+        caret-color: var(--v-positive-lighten4) !important;
+    }
+
+    .v-application .positive.lighten-3 {
+        background-color: var(--v-positive-lighten3) !important;
+        border-color: var(--v-positive-lighten3) !important;
+    }
+
+    .v-application .positive--text.text--lighten-3 {
+        color: var(--v-positive-lighten3) !important;
+        caret-color: var(--v-positive-lighten3) !important;
+    }
+
+    .v-application .positive.lighten-2 {
+        background-color: var(--v-positive-lighten2) !important;
+        border-color: var(--v-positive-lighten2) !important;
+    }
+
+    .v-application .positive--text.text--lighten-2 {
+        color: var(--v-positive-lighten2) !important;
+        caret-color: var(--v-positive-lighten2) !important;
+    }
+
+    .v-application .positive.lighten-1 {
+        background-color: var(--v-positive-lighten1) !important;
+        border-color: var(--v-positive-lighten1) !important;
+    }
+
+    .v-application .positive--text.text--lighten-1 {
+        color: var(--v-positive-lighten1) !important;
+        caret-color: var(--v-positive-lighten1) !important;
+    }
+
+    .v-application .positive.darken-1 {
+        background-color: var(--v-positive-darken1) !important;
+        border-color: var(--v-positive-darken1) !important;
+    }
+
+    .v-application .positive--text.text--darken-1 {
+        color: var(--v-positive-darken1) !important;
+        caret-color: var(--v-positive-darken1) !important;
+    }
+
+    .v-application .positive.darken-2 {
+        background-color: var(--v-positive-darken2) !important;
+        border-color: var(--v-positive-darken2) !important;
+    }
+
+    .v-application .positive--text.text--darken-2 {
+        color: var(--v-positive-darken2) !important;
+        caret-color: var(--v-positive-darken2) !important;
+    }
+
+    .v-application .positive.darken-3 {
+        background-color: var(--v-positive-darken3) !important;
+        border-color: var(--v-positive-darken3) !important;
+    }
+
+    .v-application .positive--text.text--darken-3 {
+        color: var(--v-positive-darken3) !important;
+        caret-color: var(--v-positive-darken3) !important;
+    }
+
+    .v-application .positive.darken-4 {
+        background-color: var(--v-positive-darken4) !important;
+        border-color: var(--v-positive-darken4) !important;
+    }
+
+    .v-application .positive--text.text--darken-4 {
+        color: var(--v-positive-darken4) !important;
+        caret-color: var(--v-positive-darken4) !important;
+    }
+
+    .v-application .negative {
+        background-color: var(--v-negative-base) !important;
+        border-color: var(--v-negative-base) !important;
+    }
+
+    .v-application .negative--text {
+        color: var(--v-negative-base) !important;
+        caret-color: var(--v-negative-base) !important;
+    }
+
+    .v-application .negative.lighten-5 {
+        background-color: var(--v-negative-lighten5) !important;
+        border-color: var(--v-negative-lighten5) !important;
+    }
+
+    .v-application .negative--text.text--lighten-5 {
+        color: var(--v-negative-lighten5) !important;
+        caret-color: var(--v-negative-lighten5) !important;
+    }
+
+    .v-application .negative.lighten-4 {
+        background-color: var(--v-negative-lighten4) !important;
+        border-color: var(--v-negative-lighten4) !important;
+    }
+
+    .v-application .negative--text.text--lighten-4 {
+        color: var(--v-negative-lighten4) !important;
+        caret-color: var(--v-negative-lighten4) !important;
+    }
+
+    .v-application .negative.lighten-3 {
+        background-color: var(--v-negative-lighten3) !important;
+        border-color: var(--v-negative-lighten3) !important;
+    }
+
+    .v-application .negative--text.text--lighten-3 {
+        color: var(--v-negative-lighten3) !important;
+        caret-color: var(--v-negative-lighten3) !important;
+    }
+
+    .v-application .negative.lighten-2 {
+        background-color: var(--v-negative-lighten2) !important;
+        border-color: var(--v-negative-lighten2) !important;
+    }
+
+    .v-application .negative--text.text--lighten-2 {
+        color: var(--v-negative-lighten2) !important;
+        caret-color: var(--v-negative-lighten2) !important;
+    }
+
+    .v-application .negative.lighten-1 {
+        background-color: var(--v-negative-lighten1) !important;
+        border-color: var(--v-negative-lighten1) !important;
+    }
+
+    .v-application .negative--text.text--lighten-1 {
+        color: var(--v-negative-lighten1) !important;
+        caret-color: var(--v-negative-lighten1) !important;
+    }
+
+    .v-application .negative.darken-1 {
+        background-color: var(--v-negative-darken1) !important;
+        border-color: var(--v-negative-darken1) !important;
+    }
+
+    .v-application .negative--text.text--darken-1 {
+        color: var(--v-negative-darken1) !important;
+        caret-color: var(--v-negative-darken1) !important;
+    }
+
+    .v-application .negative.darken-2 {
+        background-color: var(--v-negative-darken2) !important;
+        border-color: var(--v-negative-darken2) !important;
+    }
+
+    .v-application .negative--text.text--darken-2 {
+        color: var(--v-negative-darken2) !important;
+        caret-color: var(--v-negative-darken2) !important;
+    }
+
+    .v-application .negative.darken-3 {
+        background-color: var(--v-negative-darken3) !important;
+        border-color: var(--v-negative-darken3) !important;
+    }
+
+    .v-application .negative--text.text--darken-3 {
+        color: var(--v-negative-darken3) !important;
+        caret-color: var(--v-negative-darken3) !important;
+    }
+
+    .v-application .negative.darken-4 {
+        background-color: var(--v-negative-darken4) !important;
+        border-color: var(--v-negative-darken4) !important;
+    }
+
+    .v-application .negative--text.text--darken-4 {
+        color: var(--v-negative-darken4) !important;
+        caret-color: var(--v-negative-darken4) !important;
+    }
+
+    .v-application .background-light {
+        background-color: var(--v-background-light-base) !important;
+        border-color: var(--v-background-light-base) !important;
+    }
+
+    .v-application .background-light--text {
+        color: var(--v-background-light-base) !important;
+        caret-color: var(--v-background-light-base) !important;
+    }
+
+    .v-application .background-light.lighten-5 {
+        background-color: var(--v-background-light-lighten5) !important;
+        border-color: var(--v-background-light-lighten5) !important;
+    }
+
+    .v-application .background-light--text.text--lighten-5 {
+        color: var(--v-background-light-lighten5) !important;
+        caret-color: var(--v-background-light-lighten5) !important;
+    }
+
+    .v-application .background-light.lighten-4 {
+        background-color: var(--v-background-light-lighten4) !important;
+        border-color: var(--v-background-light-lighten4) !important;
+    }
+
+    .v-application .background-light--text.text--lighten-4 {
+        color: var(--v-background-light-lighten4) !important;
+        caret-color: var(--v-background-light-lighten4) !important;
+    }
+
+    .v-application .background-light.lighten-3 {
+        background-color: var(--v-background-light-lighten3) !important;
+        border-color: var(--v-background-light-lighten3) !important;
+    }
+
+    .v-application .background-light--text.text--lighten-3 {
+        color: var(--v-background-light-lighten3) !important;
+        caret-color: var(--v-background-light-lighten3) !important;
+    }
+
+    .v-application .background-light.lighten-2 {
+        background-color: var(--v-background-light-lighten2) !important;
+        border-color: var(--v-background-light-lighten2) !important;
+    }
+
+    .v-application .background-light--text.text--lighten-2 {
+        color: var(--v-background-light-lighten2) !important;
+        caret-color: var(--v-background-light-lighten2) !important;
+    }
+
+    .v-application .background-light.lighten-1 {
+        background-color: var(--v-background-light-lighten1) !important;
+        border-color: var(--v-background-light-lighten1) !important;
+    }
+
+    .v-application .background-light--text.text--lighten-1 {
+        color: var(--v-background-light-lighten1) !important;
+        caret-color: var(--v-background-light-lighten1) !important;
+    }
+
+    .v-application .background-light.darken-1 {
+        background-color: var(--v-background-light-darken1) !important;
+        border-color: var(--v-background-light-darken1) !important;
+    }
+
+    .v-application .background-light--text.text--darken-1 {
+        color: var(--v-background-light-darken1) !important;
+        caret-color: var(--v-background-light-darken1) !important;
+    }
+
+    .v-application .background-light.darken-2 {
+        background-color: var(--v-background-light-darken2) !important;
+        border-color: var(--v-background-light-darken2) !important;
+    }
+
+    .v-application .background-light--text.text--darken-2 {
+        color: var(--v-background-light-darken2) !important;
+        caret-color: var(--v-background-light-darken2) !important;
+    }
+
+    .v-application .background-light.darken-3 {
+        background-color: var(--v-background-light-darken3) !important;
+        border-color: var(--v-background-light-darken3) !important;
+    }
+
+    .v-application .background-light--text.text--darken-3 {
+        color: var(--v-background-light-darken3) !important;
+        caret-color: var(--v-background-light-darken3) !important;
+    }
+
+    .v-application .background-light.darken-4 {
+        background-color: var(--v-background-light-darken4) !important;
+        border-color: var(--v-background-light-darken4) !important;
+    }
+
+    .v-application .background-light--text.text--darken-4 {
+        color: var(--v-background-light-darken4) !important;
+        caret-color: var(--v-background-light-darken4) !important;
+    }
+
+    .v-application .background {
+        background-color: var(--v-background-base) !important;
+        border-color: var(--v-background-base) !important;
+    }
+
+    .v-application .background--text {
+        color: var(--v-background-base) !important;
+        caret-color: var(--v-background-base) !important;
+    }
+
+    .v-application .background.lighten-5 {
+        background-color: var(--v-background-lighten5) !important;
+        border-color: var(--v-background-lighten5) !important;
+    }
+
+    .v-application .background--text.text--lighten-5 {
+        color: var(--v-background-lighten5) !important;
+        caret-color: var(--v-background-lighten5) !important;
+    }
+
+    .v-application .background.lighten-4 {
+        background-color: var(--v-background-lighten4) !important;
+        border-color: var(--v-background-lighten4) !important;
+    }
+
+    .v-application .background--text.text--lighten-4 {
+        color: var(--v-background-lighten4) !important;
+        caret-color: var(--v-background-lighten4) !important;
+    }
+
+    .v-application .background.lighten-3 {
+        background-color: var(--v-background-lighten3) !important;
+        border-color: var(--v-background-lighten3) !important;
+    }
+
+    .v-application .background--text.text--lighten-3 {
+        color: var(--v-background-lighten3) !important;
+        caret-color: var(--v-background-lighten3) !important;
+    }
+
+    .v-application .background.lighten-2 {
+        background-color: var(--v-background-lighten2) !important;
+        border-color: var(--v-background-lighten2) !important;
+    }
+
+    .v-application .background--text.text--lighten-2 {
+        color: var(--v-background-lighten2) !important;
+        caret-color: var(--v-background-lighten2) !important;
+    }
+
+    .v-application .background.lighten-1 {
+        background-color: var(--v-background-lighten1) !important;
+        border-color: var(--v-background-lighten1) !important;
+    }
+
+    .v-application .background--text.text--lighten-1 {
+        color: var(--v-background-lighten1) !important;
+        caret-color: var(--v-background-lighten1) !important;
+    }
+
+    .v-application .background.darken-1 {
+        background-color: var(--v-background-darken1) !important;
+        border-color: var(--v-background-darken1) !important;
+    }
+
+    .v-application .background--text.text--darken-1 {
+        color: var(--v-background-darken1) !important;
+        caret-color: var(--v-background-darken1) !important;
+    }
+
+    .v-application .background.darken-2 {
+        background-color: var(--v-background-darken2) !important;
+        border-color: var(--v-background-darken2) !important;
+    }
+
+    .v-application .background--text.text--darken-2 {
+        color: var(--v-background-darken2) !important;
+        caret-color: var(--v-background-darken2) !important;
+    }
+
+    .v-application .background.darken-3 {
+        background-color: var(--v-background-darken3) !important;
+        border-color: var(--v-background-darken3) !important;
+    }
+
+    .v-application .background--text.text--darken-3 {
+        color: var(--v-background-darken3) !important;
+        caret-color: var(--v-background-darken3) !important;
+    }
+
+    .v-application .background.darken-4 {
+        background-color: var(--v-background-darken4) !important;
+        border-color: var(--v-background-darken4) !important;
+    }
+
+    .v-application .background--text.text--darken-4 {
+        color: var(--v-background-darken4) !important;
+        caret-color: var(--v-background-darken4) !important;
+    }
+
+    .v-application .background-dual {
+        background-color: var(--v-background-dual-base) !important;
+        border-color: var(--v-background-dual-base) !important;
+    }
+
+    .v-application .background-dual--text {
+        color: var(--v-background-dual-base) !important;
+        caret-color: var(--v-background-dual-base) !important;
+    }
+
+    .v-application .background-dual.lighten-5 {
+        background-color: var(--v-background-dual-lighten5) !important;
+        border-color: var(--v-background-dual-lighten5) !important;
+    }
+
+    .v-application .background-dual--text.text--lighten-5 {
+        color: var(--v-background-dual-lighten5) !important;
+        caret-color: var(--v-background-dual-lighten5) !important;
+    }
+
+    .v-application .background-dual.lighten-4 {
+        background-color: var(--v-background-dual-lighten4) !important;
+        border-color: var(--v-background-dual-lighten4) !important;
+    }
+
+    .v-application .background-dual--text.text--lighten-4 {
+        color: var(--v-background-dual-lighten4) !important;
+        caret-color: var(--v-background-dual-lighten4) !important;
+    }
+
+    .v-application .background-dual.lighten-3 {
+        background-color: var(--v-background-dual-lighten3) !important;
+        border-color: var(--v-background-dual-lighten3) !important;
+    }
+
+    .v-application .background-dual--text.text--lighten-3 {
+        color: var(--v-background-dual-lighten3) !important;
+        caret-color: var(--v-background-dual-lighten3) !important;
+    }
+
+    .v-application .background-dual.lighten-2 {
+        background-color: var(--v-background-dual-lighten2) !important;
+        border-color: var(--v-background-dual-lighten2) !important;
+    }
+
+    .v-application .background-dual--text.text--lighten-2 {
+        color: var(--v-background-dual-lighten2) !important;
+        caret-color: var(--v-background-dual-lighten2) !important;
+    }
+
+    .v-application .background-dual.lighten-1 {
+        background-color: var(--v-background-dual-lighten1) !important;
+        border-color: var(--v-background-dual-lighten1) !important;
+    }
+
+    .v-application .background-dual--text.text--lighten-1 {
+        color: var(--v-background-dual-lighten1) !important;
+        caret-color: var(--v-background-dual-lighten1) !important;
+    }
+
+    .v-application .background-dual.darken-1 {
+        background-color: var(--v-background-dual-darken1) !important;
+        border-color: var(--v-background-dual-darken1) !important;
+    }
+
+    .v-application .background-dual--text.text--darken-1 {
+        color: var(--v-background-dual-darken1) !important;
+        caret-color: var(--v-background-dual-darken1) !important;
+    }
+
+    .v-application .background-dual.darken-2 {
+        background-color: var(--v-background-dual-darken2) !important;
+        border-color: var(--v-background-dual-darken2) !important;
+    }
+
+    .v-application .background-dual--text.text--darken-2 {
+        color: var(--v-background-dual-darken2) !important;
+        caret-color: var(--v-background-dual-darken2) !important;
+    }
+
+    .v-application .background-dual.darken-3 {
+        background-color: var(--v-background-dual-darken3) !important;
+        border-color: var(--v-background-dual-darken3) !important;
+    }
+
+    .v-application .background-dual--text.text--darken-3 {
+        color: var(--v-background-dual-darken3) !important;
+        caret-color: var(--v-background-dual-darken3) !important;
+    }
+
+    .v-application .background-dual.darken-4 {
+        background-color: var(--v-background-dual-darken4) !important;
+        border-color: var(--v-background-dual-darken4) !important;
+    }
+
+    .v-application .background-dual--text.text--darken-4 {
+        color: var(--v-background-dual-darken4) !important;
+        caret-color: var(--v-background-dual-darken4) !important;
+    }
+
+    .v-application .border {
+        background-color: var(--v-border-base) !important;
+        border-color: var(--v-border-base) !important;
+    }
+
+    .v-application .border--text {
+        color: var(--v-border-base) !important;
+        caret-color: var(--v-border-base) !important;
+    }
+
+    .v-application .border.lighten-5 {
+        background-color: var(--v-border-lighten5) !important;
+        border-color: var(--v-border-lighten5) !important;
+    }
+
+    .v-application .border--text.text--lighten-5 {
+        color: var(--v-border-lighten5) !important;
+        caret-color: var(--v-border-lighten5) !important;
+    }
+
+    .v-application .border.lighten-4 {
+        background-color: var(--v-border-lighten4) !important;
+        border-color: var(--v-border-lighten4) !important;
+    }
+
+    .v-application .border--text.text--lighten-4 {
+        color: var(--v-border-lighten4) !important;
+        caret-color: var(--v-border-lighten4) !important;
+    }
+
+    .v-application .border.lighten-3 {
+        background-color: var(--v-border-lighten3) !important;
+        border-color: var(--v-border-lighten3) !important;
+    }
+
+    .v-application .border--text.text--lighten-3 {
+        color: var(--v-border-lighten3) !important;
+        caret-color: var(--v-border-lighten3) !important;
+    }
+
+    .v-application .border.lighten-2 {
+        background-color: var(--v-border-lighten2) !important;
+        border-color: var(--v-border-lighten2) !important;
+    }
+
+    .v-application .border--text.text--lighten-2 {
+        color: var(--v-border-lighten2) !important;
+        caret-color: var(--v-border-lighten2) !important;
+    }
+
+    .v-application .border.lighten-1 {
+        background-color: var(--v-border-lighten1) !important;
+        border-color: var(--v-border-lighten1) !important;
+    }
+
+    .v-application .border--text.text--lighten-1 {
+        color: var(--v-border-lighten1) !important;
+        caret-color: var(--v-border-lighten1) !important;
+    }
+
+    .v-application .border.darken-1 {
+        background-color: var(--v-border-darken1) !important;
+        border-color: var(--v-border-darken1) !important;
+    }
+
+    .v-application .border--text.text--darken-1 {
+        color: var(--v-border-darken1) !important;
+        caret-color: var(--v-border-darken1) !important;
+    }
+
+    .v-application .border.darken-2 {
+        background-color: var(--v-border-darken2) !important;
+        border-color: var(--v-border-darken2) !important;
+    }
+
+    .v-application .border--text.text--darken-2 {
+        color: var(--v-border-darken2) !important;
+        caret-color: var(--v-border-darken2) !important;
+    }
+
+    .v-application .border.darken-3 {
+        background-color: var(--v-border-darken3) !important;
+        border-color: var(--v-border-darken3) !important;
+    }
+
+    .v-application .border--text.text--darken-3 {
+        color: var(--v-border-darken3) !important;
+        caret-color: var(--v-border-darken3) !important;
+    }
+
+    .v-application .border.darken-4 {
+        background-color: var(--v-border-darken4) !important;
+        border-color: var(--v-border-darken4) !important;
+    }
+
+    .v-application .border--text.text--darken-4 {
+        color: var(--v-border-darken4) !important;
+        caret-color: var(--v-border-darken4) !important;
+    }</style>
+    <link rel="stylesheet" type="text/css" href="/css/chunk-6cdd28d0.24f0f28d.css">
+    <script charset="utf-8" src="/js/chunk-6cdd28d0.5680b9bf.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/chunk-00057014.9b361a57.css">
+    <script charset="utf-8" src="/js/chunk-00057014.7efa948e.js"></script>
+    <script charset="utf-8" src="/js/chunk-0c7ec283.91608379.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/chunk-0b88349e.c0976a2e.css">
+    <script charset="utf-8" src="/js/chunk-0b88349e.63ad9038.js"></script>
+    <style data-styled="active" data-styled-version="5.3.1"></style>
+    <script type="text/javascript" charset="UTF-8"
+            src="https://maps.googleapis.com/maps-api-v3/api/js/50/3/intl/en_gb/common.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+            src="https://maps.googleapis.com/maps-api-v3/api/js/50/3/intl/en_gb/util.js"></script>
+</head>
+<body>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DB5JH5" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+<div data-app="true" class="v-application v-application--is-ltr theme--light" id="app">
+    <div class="v-application--wrap">
+        <div data-v-135ed1ff="" class="freelancer-layout CLayout_root_1rtW5">
+            <div data-v-21ef987b="" data-v-7574c789="" data-v-135ed1ff="" class="nav-bar freelancer-nav-bar"><!---->
+                <div data-v-0f349246="" data-v-21ef987b="" class="dropdown-menu nav-bar-mobile-menu">
+                    <button data-v-0f349246="" class="dropdown-menu-button"><!----><!----><i data-v-0f349246=""
+                                                                                             class="icon-drag-drop"></i>
+                    </button><!----></div>
+                <a data-v-af90475c="" data-v-21ef987b="" href="/freelancer" class="app-link router-link-active"><img
+                        data-v-21ef987b="" src="/img/icon-small.d75a7699.svg" class="nav-bar-mobile-logo"></a>
+                <div data-v-21ef987b="" class="nav-bar-buttons">
+                    <div data-v-7574c789="" role="dialog" class="v-dialog__container freelancer-nav-bar-preference"
+                         data-v-21ef987b=""><!----></div>
+                    <div data-v-7574c789=""
+                         class="FreelancerAvailability_root_1gRsr FreelancerAvailability_displayLarge_2YTtT freelancer-nav-bar-availability"
+                         data-v-21ef987b="">
+                        <button class="FreelancerAvailability_button_2pOap" data-original-title="null"><i
+                                class="FreelancerAvailability_dot_16bBS icon-available"></i><!----><i
+                                class="FreelancerAvailability_chevron_CXLq1 icon-chevron-bottom"></i></button><!---->
+                    </div>
+                    <div data-v-7574c789="" data-v-21ef987b=""><a data-v-af90475c="" role="button"
+                                                                  class="app-link nav-button nav-button--secondary-void nav-button--small NotificationsButton_notificationsButton_3j9n0">
+                        <button data-v-af90475c="" type="button" class=""><!----><!----><span data-v-af90475c=""
+                                                                                              class="nav-button-label"><!---->
+                            <!----><span data-v-9a43c092=""
+                                         class="icon icon--theme-default icon--size-medium NotificationsButton_icon_17TQ2"
+                                         data-v-af90475c=""><svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                                                 xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd"
+      d="M10.0001 9.5V6.16667C10.0001 4.12 8.91341 2.40667 7.00008 1.95333V1.5C7.00008 0.946667 6.55341 0.5 6.00008 0.5C5.44675 0.5 5.00008 0.946667 5.00008 1.5V1.95333C3.09341 2.40667 2.00008 4.11333 2.00008 6.16667V9.5L0.666748 10.8333V11.5H11.3334V10.8333L10.0001 9.5ZM6.00008 13.5C6.73341 13.5 7.33341 12.9 7.33341 12.1667H4.66675C4.66675 12.9 5.26675 13.5 6.00008 13.5ZM3.33341 10.1667H8.66675V6.16667C8.66675 4.51333 7.66008 3.16667 6.00008 3.16667C4.34008 3.16667 3.33341 4.51333 3.33341 6.16667V10.1667Z"></path>
+</svg>
+</span><!----><!----></span></button>
+                    </a><!---->
+                        <div class="NotificationStack_notificationStack_1SJFh"></div>
+                    </div>
+                    <div data-v-0f349246="" data-v-7574c789=""
+                         class="dropdown-menu with-picture freelancer-nav-bar-dropdown" data-freelancer-dropdown=""
+                         data-v-21ef987b="">
+                        <button data-v-0f349246="" class="dropdown-menu-button">
+                            <div data-v-0f349246=""
+                                 class="ProfilePicture_root_16ae7 ProfilePicture_sizeXxxs_2qmWP dropdown-menu-profile-img">
+                                <img src="https://profile-pic-comet.s3.eu-central-1.amazonaws.com/FREELANCE/45891/243hv4f1l4wrogsq.jpeg"
+                                     class="ImageFallback_image_cNcIc ImageFallback_radiusCircle_2ss42 ImageFallback_borderBackground_2EZpR ProfilePicture_image_3A0ak">
+                                <!----></div><!----><!----></button><!----></div>
+                </div>
+            </div><!---->
+            <div data-v-135ed1ff="" class="EmailConfirmationBanner_emailConfirmationBanner_1F2w9">
+                <div data-v-317fbef3="" class="txt txt--size-xxs txt--theme-white txt--align-center txt--type-normal">Tu
+                    n'as pas encore confirmé ton adresse mail, pense à aller vérifier tes mails pour la valider.
+                    <!----></div>
+                <a data-v-af90475c="" role="button" class="app-link EmailConfirmationBanner_cta_J0-o-" align="center">
+                    <div data-v-317fbef3="" data-v-af90475c=""
+                         class="txt txt--size-xxs txt--theme-white txt--align-center">Clique ici pour recevoir un email
+                        à nouveau.<!----></div>
+                </a></div><!---->
+            <div data-v-135ed1ff="" class="freelancer-layout-main">
+                <div data-v-135ed1ff="" class="freelancer-layout-wrapper">
+                    <div data-v-bdf25126="" data-v-135ed1ff=""
+                         class="with-slide with-slide--nav-fade freelancer-layout-content">
+                        <div data-v-70fbb0a8="" data-v-135ed1ff="" data-infinite-wrapper=""
+                             class="freelancer-frame MeView_meView_3Fhs7"><!---->
+                            <div data-v-06c49907="" data-v-70fbb0a8=""
+                                 class="with-loading freelancer-frame-wrapper freelancer-frame-wrapper--slim">
+                                <div data-v-70fbb0a8="" data-v-06c49907="" class="freelancer-frame-wrapper-content">
+                                    <div data-v-06c49907="" class="MeView_resume_1Kr1i"><a
+                                            href="https://app.comet.co/freelancer/profile/pnelgwjdKB?readOnly=false"
+                                            target="_blank"
+                                            class="v-btn v-btn--outlined theme--light v-size--default primary--text MeView_exportButton_2GyVM"
+                                            rel="noopener" data-cy-freelancer-share-resume="" data-v-06c49907=""><span
+                                            class="v-btn__content"><span>Version partageable</span><i aria-hidden="true"
+                                                                                                      class="v-icon notranslate ml-2 v-icon--right mdi mdi-file-export-outline theme--light"></i></span></a>
+                                        <div class="d-flex flex-column MeView_main_rWiQ9" data-v-06c49907="">
+                                            <div class="d-flex pa-4 pt-3 mb-6 v-card v-sheet theme--light FreelancerDetails_freelancerDetails_2NHmw">
+                                                <div class="pt-2 FreelancerAvatar_root_1_TAc FreelancerAvatar_xLarge_1dRUl FreelancerDetails_avatar_B_U20">
+                                                    <div class="v-avatar"
+                                                         style="height: 120px; min-width: 120px; width: 120px;">
+                                                        <div class="v-image v-responsive secondary lighten-5 theme--light">
+                                                            <div class="v-responsive__sizer"
+                                                                 style="padding-bottom: 100%;"></div>
+                                                            <div class="v-image__image v-image__image--cover"
+                                                                 style="background-image: url(&quot;https://profile-pic-comet.s3.eu-central-1.amazonaws.com/FREELANCE/45891/243hv4f1l4wrogsq.jpeg&quot;); background-position: center center;"></div>
+                                                            <div class="v-responsive__content"
+                                                                 style="width: 200px;"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="FreelancerAvatar_badge_1OMhA">
+                                                        <div class="pt-2 FreelancerAvailabilityBadge_root_1PCTa FreelancerAvailabilityBadge_small_3tg16">
+                                                            <i aria-hidden="true"
+                                                               class="v-icon notranslate mdi mdi-circle theme--light green--text FreelancerAvailabilityBadge_icon_3wxwF"
+                                                               style="font-size: 12px;"></i><span
+                                                                class="v-tooltip v-tooltip--bottom"><!----></span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex">
+                                                    <div class="d-flex justify-space-between align-center ml-3">
+                                                        <div class="v-card__title headline font-weight-bold pa-0 pt-1 FreelancerDetails_fullName_1BIGR">
+                                                            Rollee Test
+                                                        </div>
+                                                        <div role="dialog" class="v-dialog__container"><!----></div>
+                                                        <button type="button"
+                                                                class="v-btn v-btn--icon v-btn--round theme--light v-size--default">
+                                                            <span class="v-btn__content"><i aria-hidden="true"
+                                                                                            data-cy-freelancer-detail-modal-open=""
+                                                                                            class="v-icon notranslate mdi mdi-pencil-outline theme--light"></i></span>
+                                                        </button>
+                                                    </div>
+                                                    <div data-cy-freelancer-detail-tagline=""
+                                                         class="v-card__subtitle black--text pt-0 pb-2 FreelancerDetails_subtitle_2yLrJ">
+                                                        Software Engineer at Freelance (Self employed)
+                                                    </div>
+                                                    <div class="v-card__text d-flex flex-wrap px-3 py-2 background ml-4 justify-start FreelancerDetails_content_3OCKi">
+                                                        <div class="FreelancerDetails_infos_2weto"><i aria-hidden="true"
+                                                                                                      class="v-icon notranslate mr-1 mdi mdi-map-marker-outline theme--light"
+                                                                                                      style="font-size: 16px;"></i><span>Mobilité dans toute la France</span>
+                                                        </div>
+                                                        <div class="FreelancerDetails_infos_2weto"><i aria-hidden="true"
+                                                                                                      class="v-icon notranslate mr-1 mdi mdi-battery-plus theme--light"
+                                                                                                      style="font-size: 16px;"></i><span>2 ans d'expérience</span>
+                                                        </div>
+                                                        <div class="FreelancerDetails_infos_2weto"><i aria-hidden="true"
+                                                                                                      class="v-icon notranslate mr-1 mdi mdi-currency-usd theme--light"
+                                                                                                      style="font-size: 16px;"></i><span>1 000 €/jour</span>
+                                                        </div><!---->
+                                                        <div class="FreelancerDetails_infos_2weto"><i aria-hidden="true"
+                                                                                                      class="v-icon notranslate mr-1 mdi mdi-account theme--light"
+                                                                                                      style="font-size: 16px;"></i><span>Membre depuis juin 2022, actif il y a 1 sec</span>
+                                                        </div>
+                                                    </div><!----></div>
+                                            </div>
+                                            <div class="mb-6 v-card v-sheet theme--light FreelancerProfileSkills_freelancerProfileSkills_3L4js">
+                                                <div class="d-flex justify-space-between align-center pr-4">
+                                                    <div class="v-card__title title-2 FreelancerProfileSkills_title_1_7ic">
+                                                        Compétences
+                                                    </div>
+                                                </div>
+                                                <div class="pl-4 pr-4 pb-4 FreelancerProfileSkills_core_PVjBu">
+                                                    <div class="d-flex flex-column align-stretch FreelancerSkillsField_root_34nTN">
+                                                        <!----><!---->
+                                                        <div class="d-flex flex-row flex-wrap align-center mt-1 FreelancerSkillsField_skills_-bj0l">
+                                                            <span class="body-3 v-chip v-chip--no-color v-chip--outlined theme--light v-size--default CChipTalent_root_3Xor7 FreelancerSkillsField_chip_63cvk"><span
+                                                                    class="v-chip__content"><span title="Django"
+                                                                                                  class="font-weight-semi-bold text--ellipsis">Django</span><span
+                                                                    class="v-tooltip v-tooltip--right"><!----></span><button
+                                                                    type="button"
+                                                                    class="color-current v-btn v-btn--icon v-btn--round theme--light v-size--small"><span
+                                                                    class="v-btn__content"><i aria-hidden="true"
+                                                                                              class="v-icon notranslate mdi mdi-heart-outline theme--light"
+                                                                                              style="font-size: 16px;"></i></span></button><span
+                                                                    class="ml-1">· 1 an +</span><!---->
+                                                                <!----></span></span><span
+                                                                class="body-3 v-chip v-chip--no-color v-chip--outlined theme--light v-size--default CChipTalent_root_3Xor7 FreelancerSkillsField_chip_63cvk"><span
+                                                                class="v-chip__content"><span title="SQL"
+                                                                                              class="font-weight-semi-bold text--ellipsis">SQL</span><span
+                                                                class="v-tooltip v-tooltip--right"><!----></span><button
+                                                                type="button"
+                                                                class="color-current v-btn v-btn--icon v-btn--round theme--light v-size--small"><span
+                                                                class="v-btn__content"><i aria-hidden="true"
+                                                                                          class="v-icon notranslate mdi mdi-heart-outline theme--light"
+                                                                                          style="font-size: 16px;"></i></span></button><span
+                                                                class="ml-1">· 1 an +</span><!----><!----></span></span><span
+                                                                class="body-3 v-chip v-chip--no-color v-chip--outlined theme--light v-size--default CChipTalent_root_3Xor7 FreelancerSkillsField_chip_63cvk"><span
+                                                                class="v-chip__content"><span title="Flask"
+                                                                                              class="font-weight-semi-bold text--ellipsis">Flask</span><span
+                                                                class="v-tooltip v-tooltip--right"><!----></span><button
+                                                                type="button"
+                                                                class="color-current v-btn v-btn--icon v-btn--round theme--light v-size--small"><span
+                                                                class="v-btn__content"><i aria-hidden="true"
+                                                                                          class="v-icon notranslate mdi mdi-heart-outline theme--light"
+                                                                                          style="font-size: 16px;"></i></span></button><span
+                                                                class="ml-1">· &lt; 1 an</span><!---->
+                                                            <!----></span></span><span
+                                                                class="body-3 v-chip v-chip--no-color v-chip--outlined theme--light v-size--default CChipTalent_root_3Xor7 FreelancerSkillsField_chip_63cvk"><span
+                                                                class="v-chip__content"><span title="Scikit-learn"
+                                                                                              class="font-weight-semi-bold text--ellipsis">Scikit-learn</span><span
+                                                                class="v-tooltip v-tooltip--right"><!----></span><button
+                                                                type="button"
+                                                                class="color-current v-btn v-btn--icon v-btn--round theme--light v-size--small"><span
+                                                                class="v-btn__content"><i aria-hidden="true"
+                                                                                          class="v-icon notranslate mdi mdi-heart-outline theme--light"
+                                                                                          style="font-size: 16px;"></i></span></button><span
+                                                                class="ml-1">· &lt; 1 an</span><!---->
+                                                            <!----></span></span><span
+                                                                class="body-3 v-chip v-chip--no-color v-chip--outlined theme--light v-size--default CChipTalent_root_3Xor7 FreelancerSkillsField_chip_63cvk"><span
+                                                                class="v-chip__content"><span title="TensorFlow"
+                                                                                              class="font-weight-semi-bold text--ellipsis">TensorFlow</span><span
+                                                                class="v-tooltip v-tooltip--right"><!----></span><button
+                                                                type="button"
+                                                                class="color-current v-btn v-btn--icon v-btn--round theme--light v-size--small"><span
+                                                                class="v-btn__content"><i aria-hidden="true"
+                                                                                          class="v-icon notranslate mdi mdi-heart-outline theme--light"
+                                                                                          style="font-size: 16px;"></i></span></button><span
+                                                                class="ml-1">· &lt; 1 an</span><!---->
+                                                            <!----></span></span><!----><!----></div><!----></div>
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="pa-4 pt-3 mb-6 v-card v-sheet theme--light FreelancerFullResume_freelancerExperiences_35IPk">
+                                                    <div>
+                                                        <div class="d-flex justify-space-between align-center pb-1">
+                                                            <div class="v-card__title secondary--text title-2 font-weight-bold pa-0 pt-1 text--pre-line">
+                                                                En quelques mots
+                                                            </div>
+                                                            <div role="dialog" class="v-dialog__container"><!----></div>
+                                                            <button type="button"
+                                                                    class="v-btn v-btn--icon v-btn--round theme--light v-size--default">
+                                                                <span class="v-btn__content"><i aria-hidden="true"
+                                                                                                data-cy-freelancer-biography-modal-open=""
+                                                                                                class="v-icon notranslate mdi mdi-pencil-outline theme--light"></i></span>
+                                                            </button>
+                                                        </div>
+                                                        <div data-cy-freelancer-biography=""
+                                                             class="v-card__text black--text pa-0 body-2 text--pre-line">
+                                                            Web Developer for 10 years, I'm currently working on
+                                                            creating the ultimate website.
+                                                        </div>
+                                                    </div>
+                                                    <div class="FreelancerFullResume_separator_Ztv1w"></div>
+                                                    <div id="freelancerProfileExperiences"
+                                                         class="FreelancerExperiences_freelancerExperiences_1n9_t">
+                                                        <div class="d-flex align-center pa-0 pt-1 mb-2 FreelancerExperiences_titles_3UcgF">
+                                                            <div>
+                                                                <div class="v-card__title secondary--text title-2 font-weight-bold pa-0 pr-3">
+                                                                    Expériences
+                                                                </div>
+                                                                <div class="v-card__text black--text pa-0 mt-n1 secondary--text FreelancerExperiences_subtitle_2FcYE">
+                                                                    Total de 3 expériences en 2 ans
+                                                                </div>
+                                                            </div>
+                                                            <div role="dialog" class="v-dialog__container"><!----></div>
+                                                            <button type="button"
+                                                                    class="v-btn v-btn--icon v-btn--round theme--light v-size--default FreelancerExperiences_addButton_dqH4-">
+                                                                <span class="v-btn__content"><i aria-hidden="true"
+                                                                                                class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span>
+                                                            </button>
+                                                        </div>
+                                                        <div id="experience-384092"><!---->
+                                                            <div class="d-flex body-2 mb-2 FreelancerExperiences_header_1jR2S">
+                                                                <div class="d-flex flex-column justify-space-between FreelancerExperiences_headerMain_32zmx">
+                                                                    <div>
+                                                                        <div class="d-flex align-center overline secondary--text"
+                                                                             style="font-size: 11px !important;"><span>Prestation ESN / SSII</span>
+                                                                            <!----></div>
+                                                                        <div class="d-flex align-center mt-n2"><span
+                                                                                class="font-weight-semi-bold pr-1 title">My Company</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="body-2 secondary--text text--pre-line caption">
+                                                                        <i aria-hidden="true" in-text=""
+                                                                           class="v-icon notranslate mdi mdi-calendar-outline theme--light grey--text text--lighten-1"></i><span
+                                                                            class="ml-2">sept. 2022 - En cours · 1 mois</span>
+                                                                    </div>
+                                                                    <div class="body-2 secondary--text text--pre-line caption mt-n1">
+                                                                        <i aria-hidden="true" in-text=""
+                                                                           class="v-icon notranslate mdi mdi-map-marker-outline theme--light grey--text text--lighten-1"></i><span
+                                                                            class="ml-2">Here</span></div>
+                                                                </div>
+                                                                <div class="d-flex align-center mt-0 FreelancerExperiences_rightBlock_2wZcP">
+                                                                    <button type="button"
+                                                                            class="v-btn v-btn--icon v-btn--round theme--light v-size--default">
+                                                                        <span class="v-btn__content"><i
+                                                                                aria-hidden="true"
+                                                                                class="v-icon notranslate mdi mdi-pencil-outline theme--light"></i></span>
+                                                                    </button>
+                                                                    <div role="dialog" class="v-dialog__container">
+                                                                        <!----></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="FreelancerExperiences_skills_1N6ZB">
+                                                                <div class="Tag_tag_3OH3n Tag_sizeS_3oqda Tag_themeSecondaryAlt_1SkzW">
+                                                                    <!----><span class="Tag_name_u5YYZ">Flask</span>
+                                                                    <!----></div>
+                                                                <div class="Tag_tag_3OH3n Tag_sizeS_3oqda Tag_themeSecondaryAlt_1SkzW">
+                                                                    <!----><span
+                                                                        class="Tag_name_u5YYZ">Scikit-learn</span>
+                                                                    <!----></div>
+                                                                <div class="Tag_tag_3OH3n Tag_sizeS_3oqda Tag_themeSecondaryAlt_1SkzW">
+                                                                    <!----><span
+                                                                        class="Tag_name_u5YYZ">TensorFlow</span><!---->
+                                                                </div>
+                                                            </div>
+                                                            <div class="body-2 FreelancerExperiences_description_UWebA">
+                                                                Worked hard
+                                                            </div>
+                                                        </div>
+                                                        <div id="experience-377175">
+                                                            <div class="FreelancerExperiences_separator_20fgZ"></div>
+                                                            <div class="d-flex body-2 mb-2 FreelancerExperiences_header_1jR2S">
+                                                                <div class="d-flex flex-column justify-space-between FreelancerExperiences_headerMain_32zmx">
+                                                                    <div>
+                                                                        <div class="d-flex align-center overline secondary--text"
+                                                                             style="font-size: 11px !important;"><span>Freelancing</span>
+                                                                            <!----></div>
+                                                                        <div class="d-flex align-center mt-n2"><span
+                                                                                class="font-weight-semi-bold pr-1 title">Freelance</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="body-2 secondary--text text--pre-line caption">
+                                                                        <i aria-hidden="true" in-text=""
+                                                                           class="v-icon notranslate mdi mdi-calendar-outline theme--light grey--text text--lighten-1"></i><span
+                                                                            class="ml-2">janv. 2020 - déc. 2020 · 1 an</span>
+                                                                    </div><!----></div>
+                                                                <div class="d-flex align-center mt-0 FreelancerExperiences_rightBlock_2wZcP">
+                                                                    <button type="button"
+                                                                            class="v-btn v-btn--icon v-btn--round theme--light v-size--default">
+                                                                        <span class="v-btn__content"><i
+                                                                                aria-hidden="true"
+                                                                                class="v-icon notranslate mdi mdi-pencil-outline theme--light"></i></span>
+                                                                    </button>
+                                                                    <div role="dialog" class="v-dialog__container">
+                                                                        <!----></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="FreelancerExperiences_skills_1N6ZB">
+                                                                <div class="Tag_tag_3OH3n Tag_sizeS_3oqda Tag_themeSecondaryAlt_1SkzW">
+                                                                    <!----><span class="Tag_name_u5YYZ">SQL</span>
+                                                                    <!----></div>
+                                                            </div>
+                                                            <div class="body-2 FreelancerExperiences_description_UWebA">
+                                                                Worked on Sql
+                                                            </div>
+                                                        </div>
+                                                        <div id="experience-377160">
+                                                            <div class="FreelancerExperiences_separator_20fgZ"></div>
+                                                            <div class="d-flex body-2 mb-2 FreelancerExperiences_header_1jR2S">
+                                                                <div class="d-flex flex-column justify-space-between FreelancerExperiences_headerMain_32zmx">
+                                                                    <div>
+                                                                        <div class="d-flex align-center overline secondary--text"
+                                                                             style="font-size: 11px !important;"><span>Freelancing</span>
+                                                                            <!----></div>
+                                                                        <div class="d-flex align-center mt-n2"><span
+                                                                                class="font-weight-semi-bold pr-1 title">Freelance</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="body-2 secondary--text text--pre-line caption">
+                                                                        <i aria-hidden="true" in-text=""
+                                                                           class="v-icon notranslate mdi mdi-calendar-outline theme--light grey--text text--lighten-1"></i><span
+                                                                            class="ml-2">janv. 2019 - déc. 2019 · 1 an</span>
+                                                                    </div><!----></div>
+                                                                <div class="d-flex align-center mt-0 FreelancerExperiences_rightBlock_2wZcP">
+                                                                    <button type="button"
+                                                                            class="v-btn v-btn--icon v-btn--round theme--light v-size--default">
+                                                                        <span class="v-btn__content"><i
+                                                                                aria-hidden="true"
+                                                                                class="v-icon notranslate mdi mdi-pencil-outline theme--light"></i></span>
+                                                                    </button>
+                                                                    <div role="dialog" class="v-dialog__container">
+                                                                        <!----></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="FreelancerExperiences_skills_1N6ZB">
+                                                                <div class="Tag_tag_3OH3n Tag_sizeS_3oqda Tag_themeSecondaryAlt_1SkzW">
+                                                                    <!----><span class="Tag_name_u5YYZ">Django</span>
+                                                                    <!----></div>
+                                                            </div>
+                                                            <div class="body-2 FreelancerExperiences_description_UWebA">
+                                                                Software Engineer
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pa-4 pt-3 mb-6 v-card v-sheet theme--light FreelancerEducation_freelancerEducation_2wjUa">
+                                                    <div class="d-flex align-center justify-space-between pa-0 pt-1 mb-2">
+                                                        <div class="v-card__title secondary--text title-2 font-weight-bold pa-0 pr-3">
+                                                            Formation
+                                                        </div>
+                                                        <div role="dialog" class="v-dialog__container"><!----></div>
+                                                        <button type="button"
+                                                                class="v-btn v-btn--icon v-btn--round theme--light v-size--default">
+                                                            <span class="v-btn__content"><i aria-hidden="true"
+                                                                                            class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="font-italic pa-0 body-2 secondary--text">Tu n'as rentré
+                                                        aucune formation pour le moment. N'hésite pas à les ajouter afin
+                                                        de compléter ton profil !
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pa-4 pt-3 mb-6 v-card v-sheet theme--light FreelancerReferents_freelancerReferents_1qqEC">
+                                                <div class="d-flex justify-space-between align-center pb-1">
+                                                    <div class="v-card__title secondary--text title-2 font-weight-bold pa-0 pt-1">
+                                                        Recommandations
+                                                    </div>
+                                                    <div role="dialog" class="v-dialog__container"><!----></div>
+                                                    <button type="button"
+                                                            class="v-btn v-btn--icon v-btn--round theme--light v-size--default">
+                                                        <span class="v-btn__content"><i aria-hidden="true"
+                                                                                        class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span>
+                                                    </button>
+                                                </div>
+                                                <div class="font-italic pa-0 body-2 secondary--text">Tu n'as pas encore
+                                                    ajouté de recommandation. N'hésite pas à envoyer une demander à tes
+                                                    anciens collègues et/ou manager !
+                                                </div>
+                                            </div>
+                                            <div class="pa-4 pt-3 mb-6 v-card v-sheet theme--light FreelancerLanguages_freelancerLanguages_Yh-xS">
+                                                <div class="d-flex justify-space-between align-center pb-1">
+                                                    <div class="v-card__title secondary--text title-2 font-weight-bold pa-0 pt-1">
+                                                        Langues
+                                                    </div>
+                                                    <div role="dialog" class="v-dialog__container"><!----></div>
+                                                    <button type="button"
+                                                            class="v-btn v-btn--icon v-btn--round theme--light v-size--default">
+                                                        <span class="v-btn__content"><i aria-hidden="true"
+                                                                                        class="v-icon notranslate mdi mdi-pencil-outline theme--light"></i></span>
+                                                    </button>
+                                                </div>
+                                                <div class="v-card__text black--text pa-0 pt-1"><span
+                                                        class="font-weight-bold body-2">Français</span> • <span>Bilingue / natif</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-v-06c49907="" class="MeView_side_MHezn"><!----><!---->
+                                            <div class="d-flex flex-column v-card v-sheet theme--light FreelancerProfilePreferences_freelancerProfilePreferences_3PDJc"
+                                                 data-cy-freelancer-preference="" data-v-06c49907="">
+                                                <div class="d-flex justify-space-between align-center mr-3">
+                                                    <div class="v-card__title title-2 FreelancerProfilePreferences_cardTitle_1ouXa">
+                                                        Préférences
+                                                    </div>
+                                                    <div role="dialog" class="v-dialog__container"><!----></div>
+                                                    <button type="button"
+                                                            class="v-btn v-btn--icon v-btn--round theme--light v-size--default">
+                                                        <span class="v-btn__content"><i aria-hidden="true"
+                                                                                        data-cy-freelancer-preference-modal-open=""
+                                                                                        class="v-icon notranslate mdi mdi-pencil-outline theme--light"></i></span>
+                                                    </button>
+                                                </div>
+                                                <div class="d-flex flex-column FreelancerProfilePreferences_main_2wBhk">
+                                                    <div class="FreelancerProfilePreferences_overline_330D5"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mr-2 mdi mdi-currency-eur theme--light FreelancerProfilePreferences_icon_2vspH"
+                                                            style="font-size: small;"></i><span>Tarif journalier</span>
+                                                    </div>
+                                                    <span class="FreelancerProfilePreferences_freelancerInfo_2w2ry">1000€ /jour</span>
+                                                    <div class="FreelancerProfilePreferences_overline_330D5"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mr-2 mdi mdi-map-marker-outline theme--light FreelancerProfilePreferences_icon_2vspH"
+                                                            style="font-size: small;"></i><span>Localisation</span>
+                                                    </div>
+                                                    <span class="FreelancerProfilePreferences_freelancerInfo_2w2ry">Paris • Mobilité Pays</span>
+                                                    <div class="FreelancerProfilePreferences_overline_330D5"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mr-2 mdi mdi-video-outline theme--light FreelancerProfilePreferences_icon_2vspH"
+                                                            style="font-size: small;"></i><span>Télétravail</span></div>
+                                                    <span class="FreelancerProfilePreferences_freelancerInfo_2w2ry">Indifférent</span>
+                                                    <div class="FreelancerProfilePreferences_overline_330D5"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mr-2 mdi mdi-clock-outline theme--light FreelancerProfilePreferences_icon_2vspH"
+                                                            style="font-size: small;"></i><span>Rythme et durée</span>
+                                                    </div>
+                                                    <span class="FreelancerProfilePreferences_freelancerInfo_2w2ry">Indifférent</span>
+                                                    <div class="FreelancerProfilePreferences_overline_330D5"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mr-2 mdi mdi-office-building theme--light FreelancerProfilePreferences_icon_2vspH"
+                                                            style="font-size: small;"></i><span>Entreprises</span></div>
+                                                    <span class="FreelancerProfilePreferences_freelancerInfo_2w2ry">Indifférent</span>
+                                                </div>
+                                            </div>
+                                            <div class="v-card v-sheet theme--light FreelancerProfileLinks_freelancerProfileLinks_1WmEV"
+                                                 data-v-06c49907="">
+                                                <div class="d-flex justify-space-between align-center mr-3">
+                                                    <div class="v-card__title title-2 FreelancerProfileLinks_cardTitle_3YTtv">
+                                                        Présence en ligne
+                                                    </div>
+                                                    <div role="dialog" class="v-dialog__container"><!----></div>
+                                                    <button type="button"
+                                                            class="v-btn v-btn--icon v-btn--round theme--light v-size--default">
+                                                        <span class="v-btn__content"><i aria-hidden="true"
+                                                                                        class="v-icon notranslate mdi mdi-pencil-outline theme--light"></i></span>
+                                                    </button>
+                                                </div>
+                                                <div class="d-flex pl-4 pr-4 pb-4"><a
+                                                        href="https://www.linkedin.com/in/test-rollee-908472243"
+                                                        target="_blank"><i aria-hidden="true"
+                                                                           class="v-icon notranslate mr-2 mdi mdi-linkedin theme--light black--text FreelancerProfileLinks_icon_1hjNJ"
+                                                                           style="font-size: large;"></i></a><!---->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="ToastMessages_root_3ouIC" style="display: none;"></div><!----></div><!----><!----><!----><!---->
+    </div>
+</div>
+<div id="waitingScreen" style="opacity: 0; display: none;"><img id="logo" onload="fadeIn()"
+                                                                src="/static/img/logo-light.svg" width="180px"
+                                                                height="180px" style="opacity: 1;"></div>
+<script defer="defer" src="/js/needed-in-main-preload.807a0537.js"></script>
+<script defer="defer" src="/js/vue-vendors.e1e3d9c4.js"></script>
+<script defer="defer" src="/js/vendors~app.ee280078.js"></script>
+<script defer="defer" src="/js/app.1c5b4233.js"></script>
+<script async="" defer="defer"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSQJ1OKZtHYiOhF6WqEX2KabYA_eBTXU&amp;libraries=places"></script>
+<!--googleoff: index-->
+<div class="axeptio_mount" id="axeptio_overlay" data-project-id="60e5c00ab73238211e8df970" data-nosnippet="">
+    <div class="WebsiteOverlay__WebsiteOverlayStyle-sc-1tlh7za-0 bqzerq ax-website-overlay">
+        <div class="WebsiteOverlay__WidgetContainer-sc-1tlh7za-2 fFZLCu ax-widget-container" role="region"
+             tabindex="-1"><input type="hidden" name="axeptio_cookies_app.comet.co-base_value" value="">
+            <div class="Widget__WidgetStyle-sc-zhn46e-1 eRAQmD axeptio_widget ax-widget" data-service="cookies"
+                 tabindex="-1">
+                <div class="Widget__WidgetWrapper-sc-zhn46e-2 fDlBgy axeptio_widget_wrapper">
+                    <div class="Elements__Content-sc-xuz5b0-2 cAYrlO">
+                        <div>
+                            <div class="Elements__ContentHeading-sc-xuz5b0-6 ipqEjq">
+                                <div class="Elements__Illustration-sc-xuz5b0-7 jJDOyH"><img
+                                        src="https://axeptio.imgix.net/2020/04/Nouveau-client-07.png?auto=format&amp;fit=crop&amp;w=170&amp;h=auto&amp;dpr=1"
+                                        srcset="https://axeptio.imgix.net/2020/04/Nouveau-client-07.png?auto=format&amp;fit=crop&amp;w=170&amp;h=auto&amp;dpr=1 1x, https://axeptio.imgix.net/2020/04/Nouveau-client-07.png?auto=format&amp;fit=crop&amp;w=170&amp;h=auto&amp;dpr=2 2x, https://axeptio.imgix.net/2020/04/Nouveau-client-07.png?auto=format&amp;fit=crop&amp;w=170&amp;h=auto&amp;dpr=3 3x"
+                                        width="170" alt="" loading="lazy" class="Illustration__Img"></div>
+                                <div role="heading" aria-level="1" class="Widget__WidgetTitle-sc-zhn46e-6 iwQBra">
+                                    <small>Salut c'est nous...</small><span>les Cookies !</span></div>
+                            </div>
+                            <div class="Elements__CookieMessage-sc-xuz5b0-4 elIUs"><p>On aimerait bien vous accompagner
+                                pendant votre visite...&nbsp;<br>C'est OK pour vous ?</p></div>
+                            <div class="Elements__PolicyLink-sc-xuz5b0-1 blmKTP"><a target="_blank"
+                                                                                    href="https://www.comet.co/rgpd"
+                                                                                    rel="noopener noreferrer">Consulter
+                                notre politique de confidentialité</a></div>
+                        </div>
+                    </div>
+                    <span class="Widget__WidgetCopyright-sc-zhn46e-17 gegvBA"><button aria-expanded="false"><span>Consentements certifiés par </span><span
+                            class="AxeptioLogo__Style-sc-rsxlk6-0 imAFOl"><span
+                            class="Icon__IconStyleContainer-sc-1jpid70-0 bEBISY"><span
+                            class="Icon__IconStyle-sc-1jpid70-1 fzeKsP svgr"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                  viewBox="0 0 241 47"
+                                                                                  aria-label="Axeptio" role="img"><path
+                            d="M12.46 34.74a2.06 2.06 0 00.683-.457L37.518 9.896a2.125 2.125 0 000-2.968 2.099 2.099 0 00-2.98 0L11.64 29.813l-7.866-7.866a2.098 2.098 0 00-2.98 0 2.074 2.074 0 000 2.968l9.382 9.368a2.073 2.073 0 001.477.61 2.06 2.06 0 00.807-.154zm17.667-7.893c.335.222.73.339 1.132.335a1.942 1.942 0 001.438-.609l14.954-14.967a2.008 2.008 0 000-2.863 2.01 2.01 0 00-2.85 0l-14.98 14.98a2.022 2.022 0 00.305 3.124zm13.611 10.78l5.883-5.883a2.007 2.007 0 00.013-2.864 2.022 2.022 0 00-2.864 0l-5.896 5.87a2.047 2.047 0 000 2.877 1.983 1.983 0 002.864 0zm-5.52-5.534L49.62 20.69a2.025 2.025 0 00-2.864-2.864L35.34 29.256a2.022 2.022 0 000 2.837 2.048 2.048 0 001.438.622 2.049 2.049 0 001.439-.622zm56.59-17.228c0 .041-.063.073-.095.031-1.97-2.688-5.4-4.31-9.232-4.31-7.114 0-12.481 5.45-12.481 12.647 0 7.124 5.494 12.69 12.481 12.69 3.843 0 7.273-1.633 9.232-4.332.032-.042.095-.02.095.021v2.448c0 .753.614 1.36 1.355 1.36h1.112a1.38 1.38 0 00.962-.403 1.348 1.348 0 00.393-.957V12.448a1.325 1.325 0 00-.393-.953 1.357 1.357 0 00-.962-.396h-1.112c-.36.005-.702.15-.956.402a1.352 1.352 0 00-.399.947v2.417zm-5.875 16.904c-6.416 2.103-12.09-2.427-12.09-8.578a8.695 8.695 0 01.629-3.416 8.779 8.779 0 011.919-2.91 8.9 8.9 0 012.91-1.946 8.985 8.985 0 013.445-.682 9.093 9.093 0 013.723.753 8.995 8.995 0 013.076 2.205 8.865 8.865 0 011.88 3.262 8.791 8.791 0 01.351 3.739 8.558 8.558 0 01-1.767 4.656 8.719 8.719 0 01-4.076 2.917zm51.64-21.172c-7.283 0-12.555 5.303-12.555 12.605 0 7.385 5.272 12.741 12.555 12.741 4.235 0 7.961-1.8 10.227-4.885a1.204 1.204 0 00-.508-1.8l-.868-.397a1.64 1.64 0 00-.993-.074 1.62 1.62 0 00-.849.514 8.936 8.936 0 01-3.125 2.26 9.028 9.028 0 01-3.799.742c-4.743 0-8.046-2.814-8.702-7.354 0-.032.032-.053.074-.053h19.627c.264 0 .517-.099.708-.278a1.01 1.01 0 00.319-.684l.021-.732c-.021-7.553-4.891-12.605-12.132-12.605zm0 3.64c4.574 0 7.718 2.772 8.29 7.25.01.03-.022.062-.043.062h-16.758c-.032 0-.053-.031-.043-.063.689-4.55 3.865-7.249 8.554-7.249zm31.188-3.64c-3.801 0-7.283 1.694-9.231 4.383-.022.031-.106.02-.106-.032v-2.563a1.268 1.268 0 00-.375-.888 1.299 1.299 0 00-.896-.377h-1.259c-.342 0-.67.132-.914.37a1.284 1.284 0 00-.389.896v33.348c0 .69.583 1.266 1.303 1.266h1.259c.688 0 1.271-.575 1.271-1.266V31.623c0-.042.084-.063.106-.021 1.979 2.699 5.399 4.33 9.231 4.33 7.114 0 12.481-5.429 12.481-12.636 0-7.239-5.367-12.7-12.481-12.7zm-3.377 4.142a9.143 9.143 0 014.316-.436 9.099 9.099 0 014.025 1.6 8.955 8.955 0 012.807 3.27 8.853 8.853 0 01.942 4.186 8.723 8.723 0 01-.644 3.424 8.787 8.787 0 01-1.937 2.91 8.915 8.915 0 01-2.927 1.942 9.001 9.001 0 01-3.459.668 9.075 9.075 0 01-3.733-.752 8.985 8.985 0 01-3.083-2.212 8.852 8.852 0 01-1.878-3.276 8.772 8.772 0 01-.336-3.75 8.525 8.525 0 011.788-4.674 8.689 8.689 0 014.119-2.9zM193.77 1.632h-.773c-.399 0-.783.156-1.066.434a1.482 1.482 0 00-.447 1.051v7.93c0 .03-.032.062-.053.062h-2.827c-.401 0-.787.158-1.07.438-.284.28-.444.661-.444 1.058v.356c0 .826.678 1.485 1.514 1.485h2.827c.021 0 .053.021.053.053v19.446a1.51 1.51 0 001.513 1.496h.773a1.535 1.535 0 001.068-.441 1.5 1.5 0 00.446-1.055V14.499c0-.032.021-.053.064-.053h3.948c.4 0 .783-.156 1.067-.434.284-.279.444-.656.447-1.051v-.356c0-.397-.159-.777-.443-1.058a1.524 1.524 0 00-1.071-.438h-3.948c-.043 0-.064-.02-.064-.063V3.117a1.486 1.486 0 00-.447-1.05 1.524 1.524 0 00-1.067-.435zM207.279 0c-1.557 0-2.795 1.15-2.795 2.615 0 1.402 1.259 2.553 2.795 2.553 1.63 0 2.868-1.099 2.868-2.553C210.137 1.12 208.909 0 207.279 0zm-.307 35.43h.624a1.618 1.618 0 001.131-.469c.3-.298.468-.7.468-1.12V12.698c0-.42-.168-.822-.468-1.12a1.618 1.618 0 00-1.131-.47h-.624a1.618 1.618 0 00-1.141.463 1.57 1.57 0 00-.469 1.127V33.84a1.6 1.6 0 001.61 1.59zm21.141-24.833c-7.453 0-12.852 5.303-12.852 12.605 0 6.757 4.753 11.956 11.306 12.657 8.437.92 15.573-6.559 14.281-14.823-.963-6.171-6.024-10.44-12.735-10.44zm0 21.695c-5.219 0-9.02-3.828-9.02-9.1 0-4.802 3.261-8.4 7.887-8.903a9.359 9.359 0 013.863.424 9.269 9.269 0 013.346 1.954 9.145 9.145 0 012.239 3.14 9.04 9.04 0 01.736 3.771 8.714 8.714 0 01-.719 3.374 8.804 8.804 0 01-1.974 2.842 8.925 8.925 0 01-2.927 1.876 9.006 9.006 0 01-3.431.622zM123.127 11.11h-1.916a1.873 1.873 0 00-.859.203c-.265.134-.494.33-.666.571l-4.975 7.668a.06.06 0 01-.096 0l-5.028-7.668a1.857 1.857 0 00-1.525-.774h-1.916a.926.926 0 00-.825.501.9.9 0 00.084.953l6.934 10.19c.021.01.021.04 0 .062l-7.971 11.14a.926.926 0 00.265 1.334c.146.09.314.14.486.141h1.811a1.866 1.866 0 001.513-.753l6.172-8.682c.022-.021.074-.021.096 0l6.066 8.661a1.868 1.868 0 001.524.774h1.863a.926.926 0 00.763-1.464l-7.94-11.204v-.073l6.891-10.126a.898.898 0 00.082-.958.927.927 0 00-.833-.496"></path></svg></span></span></span></button></span>
+                    <div>
+                        <div aria-hidden="true" class="Expandable__ExpandableContent-sc-p9rpqr-0 bQAcoQ"
+                             style="max-height: 0px;">
+                            <div>
+                                <div class="Widget__AxeptioScreen-sc-zhn46e-19 dWKmTq ax-screen">
+                                    <div class="ax-screen-row ax-screen-header">
+                                        <img src="https://axeptio.imgix.net/2020/09/persos_site_suite_05.png?auto=format&amp;fit=crop&amp;w=64&amp;h=64&amp;dpr=1"
+                                             srcset="
+      https://axeptio.imgix.net/2020/09/persos_site_suite_05.png?auto=format&amp;fit=crop&amp;w=64&amp;h=64&amp;dpr=1 1x,
+      https://axeptio.imgix.net/2020/09/persos_site_suite_05.png?auto=format&amp;fit=crop&amp;w=64&amp;h=64&amp;dpr=2 2x,
+      https://axeptio.imgix.net/2020/09/persos_site_suite_05.png?auto=format&amp;fit=crop&amp;w=64&amp;h=64&amp;dpr=3 3x
+    " width="64" height="64" alt="">
+                                        <div>
+                                            <div class="ax-screen-baseline">
+                                                Axeptio est le tiers de confiance au service de la confidentialité
+                                                des internautes.
+                                            </div>
+                                            <div>
+                                                Il garantit le recueil de votre consentement
+                                                et l'enregistrement conforme de vos choix.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ax-screen-cta">
+  <span>
+    Vous avez un site et vous voulez prendre soin de la vie privée <br> de vos
+    utilisateurs ?
+  </span>
+                                        👉
+                                        <a class="ax-link"
+                                           href="https://axeptio.eu?utm_source=app.comet.co&amp;utm_medium=widget">
+                                            Découvrez Axeptio
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ButtonGroup__ButtonGroupStyle-sc-1usw1pe-1 eSyxGx">
+                    <button id="axeptio_btn_dismiss" class="ButtonGroup__BtnStyle-sc-1usw1pe-0 hYdXLs">Tout refuser
+                    </button>
+                    <button id="axeptio_btn_configure" class="ButtonGroup__BtnStyle-sc-1usw1pe-0 hYdXLs">Paramétrer
+                    </button>
+                    <button id="axeptio_btn_acceptAll" class="ButtonGroup__BtnStyle-sc-1usw1pe-0 blnvRp">Tout accepter
+                    </button>
+                </div>
+            </div>
+            <div class="withConsent__CheckboxConsent-sc-16f08h3-0 jmVYKE"><label for="axeptio_consent_checkbox">Axeptio
+                consent</label><input id="axeptio_consent_checkbox" type="checkbox" class="not_uniform comparator"
+                                      name="axeptio_cookies_app.comet.co-base_accept" value="0"></div>
+        </div>
+        <button id="axeptio_main_button" aria-label="Continuer sans accepter" title="Continuer sans accepter"
+                class="AxeptioButton__AxeptioButtonStyle-sc-1h6hacv-0 hMxmxV"><span
+                class="AxeptioIcon__AxeptioIconStyle-sc-acb40e-0 jTvLuB"><span
+                class="Icon__IconStyleContainer-sc-1jpid70-0 bEBISY"><span
+                class="Icon__IconStyle-sc-1jpid70-1 bfWHZL svgr"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                      viewBox="0 0 24 24" aria-hidden="true"
+                                                                      focusable="false"><path
+                d="M21.7 2.8C18.9 0 11.7-.3 5.1 5.4c-6.1 5.3-6 11.7-1.3 15.2 4.4 3.3 10.5 3.8 15.2-1.3 5.7-6.1 5.5-13.7 2.7-16.5z"></path><path
+                fill="#fff"
+                d="M15.8 9.4l-.8-.8-3 3.1-3.1-3.1-.7.8 3.1 3.1-3.1 3.1.8.8 3.1-3.1 3.1 3.1.8-.8-3.1-3.1 2.9-3.1z"></path></svg></span></span></span>
+        </button>
+    </div>
+</div><!--googleon: index--></body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
