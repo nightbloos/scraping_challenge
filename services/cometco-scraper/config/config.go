@@ -11,6 +11,7 @@ type Config struct {
 	Log                LogConfig                `env:"SC_COMETCO_SCRAPER_LOG"`
 	ProfileCredentials ProfileCredentialsConfig `env:"SC_COMETCO_SCRAPER_PROFILE_CREDENTIALS"`
 	ChromeDP           ChromeDPConfig           `env:"SC_COMETCO_SCRAPER_CHROME_DP"`
+	DB                 DBConfig                 `env:"SC_COMETCO_SCRAPER_DB"`
 }
 
 type LogConfig struct {
@@ -25,7 +26,11 @@ type ProfileCredentialsConfig struct {
 
 type ChromeDPConfig struct {
 	Debug    bool `env:"DEBUG" default:"false"`
-	Headless bool `env:"HEADLESS" default:"false"`
+	Headless bool `env:"HEADLESS" default:"true"`
+}
+
+type DBConfig struct {
+	MongodbURI string `env:"MONGODB_URI"`
 }
 
 func GetConfig() (Config, error) {

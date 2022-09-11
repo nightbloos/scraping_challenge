@@ -5,6 +5,7 @@ import (
 	"math/rand"
 	"time"
 
+	"go.mongodb.org/mongo-driver/mongo"
 	"go.uber.org/zap"
 	"golang.org/x/sync/errgroup"
 
@@ -12,8 +13,10 @@ import (
 )
 
 type Application struct {
-	config config.Config
-	logger *zap.Logger
+	config   config.Config
+	logger   *zap.Logger
+	db       *mongo.Database
+	dbClosFn func()
 }
 
 func NewApplication() *Application {
@@ -29,9 +32,13 @@ func (a *Application) Run(ctx context.Context) error {
 	}
 	a.config = cfg
 
-	if err := a.initLogger(); err != nil {
+	if err = a.initLogger(); err != nil {
 		return err
 	}
+	if err = a.initDB(ctx); err != nil {
+		return err
+	}
+	defer a.dbClosFn()
 
 	errGrp, ctx := errgroup.WithContext(ctx)
 

@@ -4,6 +4,7 @@ import (
 	"context"
 
 	"golang.org/x/sync/errgroup"
+	"scraping_challenge/services/cometco-scraper/repository"
 	"scraping_challenge/services/cometco-scraper/scraper"
 )
 
@@ -19,5 +20,8 @@ func (a *Application) initServices(
 }
 
 func (a *Application) initScraper() *scraper.Scraper {
-	return scraper.NewScraper(a.config.ChromeDP, a.logger)
+	taskRepo := repository.NewTaskRepository(a.db)
+	freelancerProfileRepo := repository.NewFreelancerProfileRepository(a.db)
+
+	return scraper.NewScraper(taskRepo, freelancerProfileRepo, a.config.ChromeDP, a.logger)
 }

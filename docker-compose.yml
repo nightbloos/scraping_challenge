@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  cometco-scraper:
+    build:
+      context: .
+      dockerfile: services/cometco-scraper/Dockerfile
+    env_file:
+      - services/cometco-scraper/.env
+    environment:
+      - google-chrome
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root_pass
+    ports:
+      - "27017:27017"

@@ -11,7 +11,7 @@ import (
 	"github.com/chromedp/chromedp"
 	"github.com/pkg/errors"
 
-	"scraping_challenge/services/cometco-scraper/domain/model"
+	"scraping_challenge/services/cometco-scraper/scraper/model"
 )
 
 func ParseFreelancerProfile(ctx context.Context) (model.FreelancerProfile, error) {
@@ -52,6 +52,7 @@ func parseFreelancerProfileDetails(ctx context.Context) (model.FreelancerProfile
 	err := chromedp.Run(ctx, chromedp.Tasks{
 		chromedp.Text(fullNameSel, &fullName, chromedp.NodeVisible),
 		chromedp.Text(subtitleSel, &subtitle, chromedp.NodeVisible),
+		chromedp.WaitNotPresent(`div.v-avatar>div.v-image>div.v-image__image--preload`),
 		chromedp.Nodes(`div.v-avatar>div.v-image>div.v-image__image`, &nodes),
 	})
 	if err != nil {

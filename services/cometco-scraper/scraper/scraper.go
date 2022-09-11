@@ -8,59 +8,95 @@ import (
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"scraping_challenge/services/cometco-scraper/config"
-	"scraping_challenge/services/cometco-scraper/parser"
+	"scraping_challenge/services/cometco-scraper/domain/model"
+	"scraping_challenge/services/cometco-scraper/scraper/converter"
+	"scraping_challenge/services/cometco-scraper/scraper/converter/parser"
 )
 
 type Scraper struct {
-	allocOpts []chromedp.ExecAllocatorOption
-	ctxOpts   []chromedp.ContextOption
-	logger    *zap.Logger
+	taskRepo      TaskRepo
+	flProfileRepo FreelancerProfileRepo
+	allocOpts     []chromedp.ExecAllocatorOption
+	ctxOpts       []chromedp.ContextOption
+	logger        *zap.Logger
 }
 
-func NewScraper(cfg config.ChromeDPConfig, logger *zap.Logger) *Scraper {
+func NewScraper(taskRepo TaskRepo, flProfileRepo FreelancerProfileRepo, cfg config.ChromeDPConfig, logger *zap.Logger) *Scraper {
 	ctxOpts := make([]chromedp.ContextOption, 0)
 	if cfg.Debug {
 		ctxOpts = append(ctxOpts, chromedp.WithDebugf(logger.Sugar().Infof))
 	}
 
 	allocOpts := chromedp.DefaultExecAllocatorOptions[:]
-	if cfg.Headless {
+	if !cfg.Headless {
 		allocOpts = append(allocOpts, chromedp.Flag("headless", false))
 	}
 
 	return &Scraper{
-		allocOpts: allocOpts,
-		ctxOpts:   ctxOpts,
-		logger:    logger,
+		taskRepo:      taskRepo,
+		flProfileRepo: flProfileRepo,
+		allocOpts:     allocOpts,
+		ctxOpts:       ctxOpts,
+		logger:        logger,
 	}
 }
 
 func (s *Scraper) Run(ctx context.Context, login, pass string) error {
+	task, err := s.taskRepo.Create(ctx, model.Task{Status: model.TaskStatusInProgress})
+	if err != nil {
+		return errors.Wrap(err, "failed to create task")
+	}
+
+	logger := s.logger.With(zap.String("task_id", task.UUID))
+
 	allocCtx, allocCancel := chromedp.NewExecAllocator(ctx, s.allocOpts...)
 	defer allocCancel()
 
 	browserCtx, contextCancel := chromedp.NewContext(allocCtx, s.ctxOpts...)
 	defer contextCancel()
 
-	err := s.login(browserCtx, login, pass)
+	err = s.login(browserCtx, login, pass)
 	if err != nil {
-		s.logger.Error("failed to login", zap.Error(err))
+		s.FinishTask(ctx, task, errors.Wrap(err, "failed to login"))
+		logger.Error("failed to login", zap.Error(err))
+
 		return errors.Wrap(err, "failed to login")
 	}
 
 	err = s.navigateToProfile(browserCtx)
 	if err != nil {
-		s.logger.Error("failed to navigate to profile", zap.Error(err))
+		s.FinishTask(ctx, task, errors.Wrap(err, "failed to navigate to profile"))
+		logger.Error("failed to navigate to profile", zap.Error(err))
+
 		return errors.Wrap(err, "failed to navigate to profile")
 	}
 
-	freelancerProfile, err := parser.ParseFreelancerProfile(browserCtx)
+	cometFreelancerProfile, err := parser.ParseFreelancerProfile(browserCtx)
 	if err != nil {
-		s.logger.Error("failed to parse freelancer profile", zap.Error(err))
+		s.FinishTask(ctx, task, errors.Wrap(err, "failed to parse freelancer profile"))
+		logger.Error("failed to parse freelancer profile", zap.Error(err))
+
 		return errors.Wrap(err, "failed to parse freelancer profile")
 	}
 
-	s.logger.Info("freelancer profile", zap.Any("profile", freelancerProfile))
+	freelancerProfile, err := converter.FromCometFreelancerProfile(cometFreelancerProfile)
+	if err != nil {
+		s.FinishTask(ctx, task, errors.Wrap(err, "failed to convert comet freelancer profile"))
+		logger.Error("failed to convert comet freelancer profile", zap.Error(err))
+
+		return errors.Wrap(err, "failed to convert comet freelancer profile")
+	}
+
+	freelancerProfile, err = s.flProfileRepo.Create(ctx, freelancerProfile)
+	if err != nil {
+		s.FinishTask(ctx, task, errors.Wrap(err, "failed to create freelancer profile"))
+		logger.Error("failed to create freelancer profile", zap.Error(err))
+
+		return errors.Wrap(err, "failed to create freelancer profile")
+	}
+
+	task.ResultID = freelancerProfile.UUID
+	s.FinishTask(ctx, task, nil)
 
 	return nil
 }
@@ -110,4 +146,19 @@ func (s *Scraper) navigateToProfile(ctx context.Context) error {
 	}
 
 	return nil
+}
+
+func (s *Scraper) FinishTask(ctx context.Context, task model.Task, err error) {
+	logger := s.logger.With(zap.String("task_id", task.UUID))
+	if err != nil {
+		task.Status = model.TaskStatusFailed
+		task.FailReason = err.Error()
+	} else {
+		task.Status = model.TaskStatusCompleted
+	}
+
+	_, err = s.taskRepo.Update(ctx, task)
+	if err != nil {
+		logger.Error("failed to update task", zap.Error(err), zap.String("status", string(task.Status)), zap.String("fail_reason", task.FailReason))
+	}
 }
