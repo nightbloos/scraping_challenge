@@ -11,7 +11,7 @@ import (
 	"github.com/chromedp/chromedp"
 	"github.com/pkg/errors"
 
-	"scraping_challenge/scrapers/cometco/domain/model"
+	"scraping_challenge/services/cometco-scraper/domain/model"
 )
 
 func ParseFreelancerProfile(ctx context.Context) (model.FreelancerProfile, error) {

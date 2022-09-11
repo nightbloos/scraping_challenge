@@ -11,8 +11,8 @@ import (
 
 	"github.com/chromedp/chromedp"
 	"github.com/stretchr/testify/assert"
-	"scraping_challenge/scrapers/cometco/domain/model"
-	"scraping_challenge/scrapers/cometco/parser"
+	"scraping_challenge/services/cometco-scraper/domain/model"
+	"scraping_challenge/services/cometco-scraper/parser"
 )
 
 //go:embed freelancer_profile.html
@@ -97,6 +97,4 @@ func Test_ParseFreelancerProfile(t *testing.T) {
 	data, err := parser.ParseFreelancerProfile(ctx)
 	assert.NoError(t, err)
 	assert.Equal(t, data, expectedData)
-
-	fmt.Println(data)
 }
