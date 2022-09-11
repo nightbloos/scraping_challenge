@@ -11,8 +11,9 @@ import (
 
 	"github.com/chromedp/chromedp"
 	"github.com/stretchr/testify/assert"
-	"scraping_challenge/services/cometco-scraper/domain/model"
-	"scraping_challenge/services/cometco-scraper/parser"
+
+	"scraping_challenge/services/cometco-scraper/scraper/converter/parser"
+	"scraping_challenge/services/cometco-scraper/scraper/model"
 )
 
 //go:embed freelancer_profile.html
