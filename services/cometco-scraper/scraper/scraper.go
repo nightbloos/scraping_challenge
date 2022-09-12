@@ -4,6 +4,7 @@ import (
 	"context"
 	"time"
 
+	"github.com/chromedp/cdproto/cdp"
 	"github.com/chromedp/chromedp"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
@@ -127,16 +128,49 @@ func (s *Scraper) login(ctx context.Context, login, pass string) error {
 		return errors.Wrap(err, "failed to submit login form")
 	}
 
-	// TODO: handle error if is present `Mot de passe incorrect.` after this step
-	err = chromedp.Run(ctx, chromedp.Tasks{
-		chromedp.WaitNotPresent(emailInputSel),
-		chromedp.WaitNotPresent(passInputSel),
-	})
+	successLogin, err := s.checkSuccessLogin(ctx)
 	if err != nil {
-		return errors.Wrap(err, "failed to wait for login form to disappear")
+		return errors.Wrap(err, "failed to check success login")
+	}
+
+	if !successLogin {
+		return errors.New("failed to login")
 	}
 
 	return nil
+}
+
+func (s *Scraper) checkSuccessLogin(ctx context.Context) (bool, error) {
+	errSel := `//div[contains(@class, "Signin_signin")]//li[contains(text(), "Mot de passe incorrect")]`
+	welcomeSel := `//div[contains(@class, "DashboardView_header")]//h4[contains(text(),'Bienvenue')]`
+
+	timeoutTicket := time.NewTicker(time.Second * 15)
+	checkTicker := time.NewTicker(time.Millisecond * 100)
+	for {
+		select {
+		case <-ctx.Done():
+			return false, ctx.Err()
+
+		case <-timeoutTicket.C:
+			return false, errors.New("For too long there was no success login check")
+
+		case <-checkTicker.C:
+			var errNode, welcomeNode []*cdp.Node
+			err := chromedp.Run(ctx, chromedp.Tasks{
+				chromedp.Nodes(errSel, &errNode, chromedp.AtLeast(0)),
+				chromedp.Nodes(welcomeSel, &welcomeNode, chromedp.AtLeast(0)),
+			})
+			if err != nil {
+				return false, errors.Wrap(err, "failed to check success login")
+			}
+			if len(welcomeNode) > 0 {
+				return true, nil
+			} else if len(errNode) > 0 {
+				return false, nil
+			}
+			// else ... let's wait for next check :)
+		}
+	}
 }
 
 func (s *Scraper) navigateToProfile(ctx context.Context) error {
