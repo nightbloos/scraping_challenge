@@ -10,7 +10,7 @@ import (
 	"scraping_challenge/services/cometco-scraper/config"
 	"scraping_challenge/services/cometco-scraper/domain/model"
 	"scraping_challenge/services/cometco-scraper/scraper/converter"
-	"scraping_challenge/services/cometco-scraper/scraper/converter/parser"
+	"scraping_challenge/services/cometco-scraper/scraper/parser"
 )
 
 type Scraper struct {
