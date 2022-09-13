@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/rs/cors"
 	"go.uber.org/zap"
 )
 
@@ -19,7 +20,8 @@ func NewServer(port int, logger *zap.Logger) *Server {
 }
 
 func (s *Server) Run(ctx context.Context, handler http.Handler) error {
-	srv := &http.Server{Addr: fmt.Sprintf(":%d", s.port), Handler: handler}
+	c := cors.Default()
+	srv := &http.Server{Addr: fmt.Sprintf(":%d", s.port), Handler: c.Handler(handler)}
 
 	shutdownCompletedCh := make(chan struct{})
 	go func() {

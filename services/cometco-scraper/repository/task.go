@@ -47,6 +47,9 @@ func (r *TaskRepository) Find(_ context.Context, limit int64, offset int64) ([]m
 	t := []model.Task{}
 	err := r.taskColl.SimpleFind(&t, bson.M{}, options.Find().SetSkip(offset).SetLimit(limit))
 	if err != nil {
+		if err == mongo.ErrNoDocuments {
+			return []model.Task{}, nil
+		}
 		return nil, domain.WrapWithInternalError(err, "failed to find task")
 	}
 

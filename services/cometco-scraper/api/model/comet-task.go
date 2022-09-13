@@ -33,6 +33,6 @@ type GetShortTaskResponse struct {
 type GetTaskResponse struct {
 	ID         string     `json:"id"`
 	Status     TaskStatus `json:"status"`
-	FailReason string     `json:"fail_reason"`
-	ResultID   string     `json:"result_id"`
+	FailReason string     `json:"fail_reason,omitempty"`
+	ResultID   string     `json:"result_id,omitempty"`
 }
