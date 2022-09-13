@@ -15,14 +15,12 @@ import (
 )
 
 type Scraper struct {
-	taskRepo      TaskRepo
-	flProfileRepo FreelancerProfileRepo
-	allocOpts     []chromedp.ExecAllocatorOption
-	ctxOpts       []chromedp.ContextOption
-	logger        *zap.Logger
+	allocOpts []chromedp.ExecAllocatorOption
+	ctxOpts   []chromedp.ContextOption
+	logger    *zap.Logger
 }
 
-func NewScraper(taskRepo TaskRepo, flProfileRepo FreelancerProfileRepo, cfg config.ChromeDPConfig, logger *zap.Logger) *Scraper {
+func NewScraper(cfg config.ChromeDPConfig, logger *zap.Logger) *Scraper {
 	ctxOpts := make([]chromedp.ContextOption, 0)
 	if cfg.Debug {
 		ctxOpts = append(ctxOpts, chromedp.WithDebugf(logger.Sugar().Infof))
@@ -34,21 +32,14 @@ func NewScraper(taskRepo TaskRepo, flProfileRepo FreelancerProfileRepo, cfg conf
 	}
 
 	return &Scraper{
-		taskRepo:      taskRepo,
-		flProfileRepo: flProfileRepo,
-		allocOpts:     allocOpts,
-		ctxOpts:       ctxOpts,
-		logger:        logger,
+		allocOpts: allocOpts,
+		ctxOpts:   ctxOpts,
+		logger:    logger,
 	}
 }
 
-func (s *Scraper) Run(ctx context.Context, login, pass string) error {
-	task, err := s.taskRepo.Create(ctx, model.Task{Status: model.TaskStatusInProgress})
-	if err != nil {
-		return errors.Wrap(err, "failed to create task")
-	}
-
-	logger := s.logger.With(zap.String("task_id", task.UUID))
+func (s *Scraper) Run(ctx context.Context, login, pass string) (model.FreelancerProfile, error) {
+	logger := s.logger.With(zap.String("login", login))
 
 	allocCtx, allocCancel := chromedp.NewExecAllocator(ctx, s.allocOpts...)
 	defer allocCancel()
@@ -56,50 +47,31 @@ func (s *Scraper) Run(ctx context.Context, login, pass string) error {
 	browserCtx, contextCancel := chromedp.NewContext(allocCtx, s.ctxOpts...)
 	defer contextCancel()
 
-	err = s.login(browserCtx, login, pass)
+	err := s.login(browserCtx, login, pass)
 	if err != nil {
-		s.FinishTask(ctx, task, errors.Wrap(err, "failed to login"))
 		logger.Error("failed to login", zap.Error(err))
-
-		return errors.Wrap(err, "failed to login")
+		return model.FreelancerProfile{}, errors.Wrap(err, "failed to login")
 	}
 
 	err = s.navigateToProfile(browserCtx)
 	if err != nil {
-		s.FinishTask(ctx, task, errors.Wrap(err, "failed to navigate to profile"))
 		logger.Error("failed to navigate to profile", zap.Error(err))
-
-		return errors.Wrap(err, "failed to navigate to profile")
+		return model.FreelancerProfile{}, errors.Wrap(err, "failed to navigate to profile")
 	}
 
 	cometFreelancerProfile, err := parser.ParseFreelancerProfile(browserCtx)
 	if err != nil {
-		s.FinishTask(ctx, task, errors.Wrap(err, "failed to parse freelancer profile"))
 		logger.Error("failed to parse freelancer profile", zap.Error(err))
-
-		return errors.Wrap(err, "failed to parse freelancer profile")
+		return model.FreelancerProfile{}, errors.Wrap(err, "failed to parse freelancer profile")
 	}
 
 	freelancerProfile, err := converter.FromCometFreelancerProfile(cometFreelancerProfile)
 	if err != nil {
-		s.FinishTask(ctx, task, errors.Wrap(err, "failed to convert comet freelancer profile"))
 		logger.Error("failed to convert comet freelancer profile", zap.Error(err))
-
-		return errors.Wrap(err, "failed to convert comet freelancer profile")
+		return model.FreelancerProfile{}, errors.Wrap(err, "failed to convert comet freelancer profile")
 	}
 
-	freelancerProfile, err = s.flProfileRepo.Create(ctx, freelancerProfile)
-	if err != nil {
-		s.FinishTask(ctx, task, errors.Wrap(err, "failed to create freelancer profile"))
-		logger.Error("failed to create freelancer profile", zap.Error(err))
-
-		return errors.Wrap(err, "failed to create freelancer profile")
-	}
-
-	task.ResultID = freelancerProfile.UUID
-	s.FinishTask(ctx, task, nil)
-
-	return nil
+	return freelancerProfile, nil
 }
 
 func (s *Scraper) login(ctx context.Context, login, pass string) error {
@@ -180,19 +152,4 @@ func (s *Scraper) navigateToProfile(ctx context.Context) error {
 	}
 
 	return nil
-}
-
-func (s *Scraper) FinishTask(ctx context.Context, task model.Task, err error) {
-	logger := s.logger.With(zap.String("task_id", task.UUID))
-	if err != nil {
-		task.Status = model.TaskStatusFailed
-		task.FailReason = err.Error()
-	} else {
-		task.Status = model.TaskStatusCompleted
-	}
-
-	_, err = s.taskRepo.Update(ctx, task)
-	if err != nil {
-		logger.Error("failed to update task", zap.Error(err), zap.String("status", string(task.Status)), zap.String("fail_reason", task.FailReason))
-	}
 }

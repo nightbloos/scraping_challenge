@@ -33,25 +33,25 @@ func (r *FreelancerProfileRepository) FindByID(ctx context.Context, id string) (
 		return model.FreelancerProfile{}, domain.WrapWithInternalError(res.Err(), "failed to find profile")
 	}
 
-	t := model.FreelancerProfile{}
-	if err := res.Decode(&t); err != nil {
+	p := model.FreelancerProfile{}
+	if err := res.Decode(&p); err != nil {
 		return model.FreelancerProfile{}, domain.WrapWithInternalError(err, "failed to decode profile")
 	}
 
-	return t, nil
+	return p, nil
 }
 
-func (r *FreelancerProfileRepository) Create(_ context.Context, t model.FreelancerProfile) (model.FreelancerProfile, error) {
-	err := t.Creating()
+func (r *FreelancerProfileRepository) Create(_ context.Context, p model.FreelancerProfile) (model.FreelancerProfile, error) {
+	err := p.Creating()
 	if err != nil {
 		return model.FreelancerProfile{}, domain.WrapWithInternalError(err, "failed to trigger create hooks for profile")
 	}
 
-	t.UUID = uuid.New().String()
-	err = r.freelancerProfileColl.Create(&t)
+	p.UUID = uuid.New().String()
+	err = r.freelancerProfileColl.Create(&p)
 	if err != nil {
 		return model.FreelancerProfile{}, domain.WrapWithInternalError(err, "failed to create new profile")
 	}
 
-	return t, nil
+	return p, nil
 }
