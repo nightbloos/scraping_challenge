@@ -1,0 +1,250 @@
+openapi: 3.0.3
+info:
+  title: Comet.co parser
+  description: API for parsing Comet.co freelance profiles
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080'
+    description: Local server
+paths:
+  /comet/tasks:
+    get:
+      summary: Get all tasks
+      description: Get all tasks
+      tags:
+        - tasks
+      operationId: getTasks
+      responses:
+        '200':
+          $ref: "#/components/responses/GetTasksResponseSuccess"
+        '500':
+          $ref: "#/components/responses/InternalServerError"
+    post:
+      summary: Create a new task
+      description: Create a new task
+      tags:
+        - tasks
+      operationId: createTask
+      requestBody:
+        $ref: "#/components/requestBodies/CreateTask"
+      responses:
+        '201':
+          $ref: "#/components/responses/CreateTaskResponseSuccess"
+        '500':
+          $ref: "#/components/responses/InternalServerError"
+  /comet/tasks/{id}:
+    get:
+      summary: Get a task by id
+      description: Get a task by id
+      tags:
+        - tasks
+      operationId: getTaskById
+      parameters:
+        - name: id
+          in: path
+          description: Task id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          $ref: "#/components/responses/GetTaskByIdResponseSuccess"
+        '404':
+          $ref: "#/components/responses/NotFoundError"
+        '500':
+          $ref: "#/components/responses/InternalServerError"
+  /comet/freelancer-profile/{id}:
+    get:
+      summary: Get a freelancer profile by scrape result_id
+      description: Get a freelancer profile scrape result_id
+      tags:
+        - freelancer-profile
+      operationId: getFreelancerProfileById
+      parameters:
+        - name: id
+          in: path
+          description: Freelancer profile scrape result_id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          $ref: "#/components/responses/GetFreelancerProfileByIdResponseSuccess"
+        '404':
+          $ref: "#/components/responses/NotFoundError"
+        '500':
+          $ref: "#/components/responses/InternalServerError"
+
+components:
+  schemas:
+    DateTime:
+      type: string
+      description: Datetime in string format
+      example: "2021-10-12T07:05:51Z"
+    ShortTask:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+    Task:
+      type: object
+      required:
+        - id
+        - status
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum:
+            - in_progress
+            - completed
+            - failed
+        fail_reason:
+          description: Reason of failure. Empty if status is not failed
+          type: string
+        result_id:
+          description: Id of the result. Empty if status is not completed
+          type: integer
+    FreelancerProfile:
+      type: object
+      required:
+        - id
+        - details
+        - skills
+        - resume
+        - languages
+      properties:
+        id:
+          type: string
+          format: uuid
+        details:
+          type: object
+          required:
+            - full_name
+            - subtitle
+            - avatar_url
+          properties:
+            full_name:
+              type: string
+            subtitle:
+              type: string
+            avatar_url:
+              type: string
+              format: uri
+        skills:
+          type: array
+          items:
+            type: object
+            required:
+              - name
+              - years
+              - sign
+            properties:
+              name:
+                type: string
+              years:
+                type: integer
+              sign:
+                type: string
+                enum:
+                  - less
+                  - more
+        resume:
+          type: object
+          required:
+            - biography
+            - experiences
+          properties:
+            biography:
+              type: string
+            experiences:
+              type: array
+              items:
+                type: object
+                required:
+                  - company
+                  - position
+                  - start_date
+                  - end_date
+                properties:
+                  location:
+                    type: string
+                  company:
+                    type: string
+                  type:
+                    type: string
+                  description:
+                    type: string
+                  start_at:
+                    $ref: "#/components/schemas/DateTime"
+                  end_at:
+                    $ref: "#/components/schemas/DateTime"
+                  skills:
+                    type: array
+                    items:
+                      type: string
+
+  responses:
+    InternalServerError:
+      description: Internal server error
+    NotFoundError:
+      description: Not found error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: task not found
+              code:
+                type: integer
+                example: 404
+
+    GetTasksResponseSuccess:
+      description: Successful fetch of tasks
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/ShortTask"
+    CreateTaskResponseSuccess:
+      description: Successful creation of task
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                format: uuid
+    GetTaskByIdResponseSuccess:
+      description: Successful fetch of task by id
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Task"
+    GetFreelancerProfileByIdResponseSuccess:
+      description: Successful fetch of freelancer profile by id
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/FreelancerProfile"
+
+  requestBodies:
+    CreateTask:
+      description: Create a new task
+      content:
+        application/json:
+          schema:
+            description: Create a new task. In case if both fields are empty, or is sent empty object, the task will be created with default values(from env variables)
+            type: object
+            properties:
+              login:
+                type: string
+              password:
+                type: string

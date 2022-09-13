@@ -7,8 +7,8 @@ services:
       dockerfile: services/cometco-scraper/Dockerfile
     env_file:
       - services/cometco-scraper/.env
-    environment:
-      - google-chrome
+    ports:
+      - "8080:8080"
   mongo:
     image: mongo
     restart: always

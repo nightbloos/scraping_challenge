@@ -53,7 +53,7 @@ func (s *CometServer) CreateTask(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, model.CreateTaskResponse{
+	c.JSON(http.StatusCreated, model.CreateTaskResponse{
 		ID: taskID,
 	})
 }
